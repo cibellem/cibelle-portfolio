@@ -5,11 +5,12 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-sass",
+    `gatsby-plugin-styled-components`,
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "UA-198875821-1",
       },
     },
     "gatsby-plugin-react-helmet",
