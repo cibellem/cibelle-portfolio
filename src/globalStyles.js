@@ -13,6 +13,7 @@ export const mediaQueries = (key) => {
 
 export const GlobalStyles = createGlobalStyle`
   html, body {
+    font-family: "Josefin Sans";
     margin: 0;
     padding: 0;
   }
@@ -20,8 +21,8 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {   
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-family: "Josefin Sans";
 	height: 100vh;   
-    text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
   }
   `;

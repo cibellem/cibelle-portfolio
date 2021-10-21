@@ -4,6 +4,9 @@ import NavBar from "../Nav/index";
 import { mediaQueries, GlobalStyles } from "../globalStyles";
 import Burger from "../Menu";
 import Hero from "../Hero";
+import Projects from "../Projects";
+import Footer from "../Footer";
+import About from "../About";
 
 const Container = styled.article`
   padding: 0 1.5625rem 0 1.5625rem;
@@ -18,7 +21,10 @@ const IndexPage = () => {
       <title>Home Page</title>
       <Container>
         <Hero />
+        <Projects />
+        <About />
       </Container>
+      <Footer />
     </>
   );
 };
