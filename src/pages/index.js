@@ -7,6 +7,7 @@ import Hero from "../Hero";
 import Projects from "../Projects";
 import Footer from "../Footer";
 import About from "../About";
+import Contact from "../Contact";
 
 const Container = styled.article`
   padding: 0 1.5625rem 0 1.5625rem;
@@ -23,6 +24,7 @@ const IndexPage = () => {
         <Hero />
         <Projects />
         <About />
+        <Contact />
       </Container>
       <Footer />
     </>

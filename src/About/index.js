@@ -37,11 +37,27 @@ const Underline = styled.span`
   color: #f2f3f8; ;
 `;
 
+const Marker = styled.span`
+  position: relative;
+  &:before {
+    content: "";
+    background-color: #31c5878c;
+    width: 100%;
+    height: 1em;
+    position: absolute;
+    z-index: -1;
+    left: -0.25em;
+    top: 0.1em;
+    padding: 0 0.25em;
+  }
+`;
+
 const About = () => {
   return (
     <AboutWrapper>
       <AboutHeader>
-        About Me...
+        <Marker> About Me...</Marker>
+
         <Underline />
       </AboutHeader>
 
