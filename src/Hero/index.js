@@ -1,4 +1,5 @@
 import * as React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const HeroWrapper = styled.div`
@@ -46,16 +47,22 @@ const Text = styled.p`
 
 const Hero = () => {
   return (
-    <HeroWrapper>
-      <SmallHeader>Hi, my name is</SmallHeader>
-      <Header>Cibelle Montor..</Header>
-      <SubHeader>Coding is my passion</SubHeader>
-      <Text>
-        I’m a Software Engineer specialized in building Front and Backend
-        applications. I love building scalable, out of the box and
-        straightforward solutions.{" "}
-      </Text>
-    </HeroWrapper>
+    <motion.div
+      opacity={0}
+      animate={{ y: -80, opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+    >
+      <HeroWrapper>
+        <SmallHeader>Hi, my name is</SmallHeader>
+        <Header>Cibelle Montor..</Header>
+        <SubHeader>Coding is my passion</SubHeader>
+        <Text>
+          I’m a Software Engineer specialized in building Front and Backend
+          applications. I love building scalable, out of the box and
+          straightforward solutions.{" "}
+        </Text>
+      </HeroWrapper>
+    </motion.div>
   );
 };
 

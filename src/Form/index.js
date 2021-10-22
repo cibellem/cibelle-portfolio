@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const FormGroup = styled.div`
   display: block;
   width: 100%;
-  background: #ffc00e;
+  background: #8edfbd;
   padding: 50px 20px;
 `;
 

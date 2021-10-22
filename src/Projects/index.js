@@ -40,6 +40,50 @@ const ProjectSessionHeader = styled.h3`
   text-align: center;
 `;
 
+const ProjectImg = styled.img`
+  font-size: 1.5rem;
+  text-align: center;
+`;
+
+const projectsArr = [
+  {
+    title: "Plantare",
+    img: "",
+    github: "https://github.com/cibellem/plantare",
+    app: "https://plantare.herokuapp.com/",
+    description:
+      "Faux Plant Ecommerce that leverages Firebase to handle user authentication and Stripe for checkout.",
+    type: "Full Stack MERN",
+  },
+  {
+    title: "Shelfie",
+    img: "",
+    github: "https://github.com/cibellem/react-bookSearch",
+    app: "https://react-book-shelfie.herokuapp.com/",
+    description: "Book search built using Google Books API.",
+    type: "Front End",
+  },
+  {
+    title: "Clean Kitchen",
+    img: "",
+    github: "https://github.com/cibellem/cleankitchen",
+    app: "https://ckitchenpos.herokuapp.com/",
+    description:
+      "CRUD application that intent to simplify a Kitchen point of sale system. This was a group project, developed during my Bootcamp. ",
+    type: "Full Stack",
+  },
+
+  {
+    title: "WeatherBoard",
+    img: "",
+    github: "https://github.com/cibellem/react-wdashboard",
+    app: "https://shrouded-sea-44886.herokuapp.com/",
+    description:
+      "Weather application that retrieve user's browser geolocation to display current weather. Consumes Open weather API ",
+    type: "Front End",
+  },
+];
+
 const Projects = () => {
   let array = [1, 2, 3];
 
@@ -47,16 +91,12 @@ const Projects = () => {
     <ProjectSection>
       <ProjectSessionHeader>Some Projects I worked on</ProjectSessionHeader>
 
-      {array.map((item) => (
+      {projectsArr.map((item) => (
         <ProjectBlock>
-          <ProjectMiniHeader>Featured Project</ProjectMiniHeader>
-          <ProjectName>Project Name</ProjectName>
-          <ProjectText>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            doloremque porro sapiente accusantium nulla, adipisci excepturi
-            iusto, vero unde voluptates magnam alias! Obcaecati dicta
-            doloremque, totam quae ullam doloribus saepe!
-          </ProjectText>
+          <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
+          <ProjectName>{item.title}</ProjectName>
+      
+          <ProjectText>{item.description}</ProjectText>
         </ProjectBlock>
       ))}
     </ProjectSection>

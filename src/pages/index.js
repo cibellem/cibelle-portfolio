@@ -8,6 +8,7 @@ import Projects from "../Projects";
 import Footer from "../Footer";
 import About from "../About";
 import Contact from "../Contact";
+import Skills from "../Skills";
 
 const Container = styled.article`
   padding: 0 1.5625rem 0 1.5625rem;
@@ -20,9 +21,11 @@ const IndexPage = () => {
     <>
       <GlobalStyles />
       <title>Home Page</title>
+      <NavBar />
       <Container>
         <Hero />
         <Projects />
+        <Skills />
         <About />
         <Contact />
       </Container>
