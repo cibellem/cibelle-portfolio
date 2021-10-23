@@ -9,7 +9,8 @@ const SkillWrapper = styled.article`
 const StackWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin: 40px 0;
 `;
 
 const StackDiv = styled.div`
@@ -19,29 +20,14 @@ const StackDiv = styled.div`
 
 const StackHeader = styled.h4`
   font-size: 1rem;
-  line-height: 2;
   margin: 0;
 `;
 
 const Tool = styled.p`
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0;
 `;
 
-const Marker = styled.span`
-  position: relative;
-  &:before {
-    content: "";
-    background-color: #ffc00e;
-    width: 100%;
-    height: 1em;
-    position: absolute;
-    z-index: -1;
-    left: -0.25em;
-    top: 0.1em;
-    padding: 0 0.25em;
-  }
-`;
 const ToolstHeader = styled.h4`
   font-size: 1.5rem;
   text-align: center;
@@ -69,7 +55,7 @@ const skillsArr = [
       "Express.js",
       "AWS Lambda",
       "AWS AppSync",
-      "NATS Event Streaming",
+      "NATS Streaming",
       "Firebase",
       "MongoDB",
     ],
@@ -80,7 +66,7 @@ const Skills = () => {
   return (
     <SkillWrapper>
       <ToolstHeader>
-        <Marker>Tools</Marker>
+        <span className="marker">Tools</span>
       </ToolstHeader>
       <StackWrapper>
         {skillsArr.map((item) => (
@@ -92,7 +78,6 @@ const Skills = () => {
           </StackDiv>
         ))}
       </StackWrapper>
-      <Tool>..to be continued</Tool>
     </SkillWrapper>
   );
 };

@@ -25,4 +25,25 @@ export const GlobalStyles = createGlobalStyle`
 	height: 100vh;   
   text-rendering: optimizeLegibility;
   }
+
+  & .marker {
+     position: relative;
+    
+     &:before {
+    content: "";
+    background-color: #fbf0f0;
+    width: 100%;
+    height: 1em;
+    position: absolute;
+    z-index: -1;
+    left: -0.25em;
+    top: 0.1em;
+    padding: 0 0.25em;
+  }
+
+  ${mediaQueries("md")`
+  font-size: 2.5rem;
+  ;`}
+
+  }
   `;

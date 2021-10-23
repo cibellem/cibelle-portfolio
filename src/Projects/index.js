@@ -1,54 +1,24 @@
 import * as React from "react";
-import styled from "styled-components";
-
-const ProjectSection = styled.article`
-  display: flex;
-  gap: 30px;
-  flex-direction: column;
-`;
-
-const ProjectBlock = styled.div`
-  border-radius: 5px;
-  padding: 20px;
-  border-left: 8px solid #0ef897;
-  border-top: 8px solid #0ef897;
-  border-right: 2px solid #0ef897;
-
-  border-bottom: 2px solid #0ef897;
-  box-shadow: -6px -5px 0px 0px #000000c9;
-  &:hover {
-    transform: translateX(20px);
-  }
-`;
-
-const ProjectName = styled.h5`
-  font-size: 1.4rem;
-  margin: 0;
-`;
-
-const ProjectText = styled.p`
-  font-size: 1rem;
-`;
-
-const ProjectMiniHeader = styled.h6`
-  font-size: 1rem;
-  margin: 0;
-`;
-
-const ProjectSessionHeader = styled.h3`
-  font-size: 1.5rem;
-  text-align: center;
-`;
-
-const ProjectImg = styled.img`
-  font-size: 1.5rem;
-  text-align: center;
-`;
+import shelfie from "./assets/book.png";
+import wx from "./assets/wx.png";
+import ck from "./assets/ck.png";
+import plantare from "./assets/plantare.png";
+import github from "./assets/github.png";
+import {
+  ProjectSection,
+  ProjectBlock,
+  ProjectName,
+  ProjectText,
+  ProjectMiniHeader,
+  ProjectSessionHeader,
+  ProjectImg,
+  GitIcon,
+} from "./Styles";
 
 const projectsArr = [
   {
     title: "Plantare",
-    img: "",
+    img: plantare,
     github: "https://github.com/cibellem/plantare",
     app: "https://plantare.herokuapp.com/",
     description:
@@ -57,15 +27,15 @@ const projectsArr = [
   },
   {
     title: "Shelfie",
-    img: "",
-    github: "https://github.com/cibellem/react-bookSearch",
+    img: shelfie,
+    github: "https://g;ithub.com/cibellem/react-bookSearch",
     app: "https://react-book-shelfie.herokuapp.com/",
     description: "Book search built using Google Books API.",
     type: "Front End",
   },
   {
     title: "Clean Kitchen",
-    img: "",
+    img: ck,
     github: "https://github.com/cibellem/cleankitchen",
     app: "https://ckitchenpos.herokuapp.com/",
     description:
@@ -75,7 +45,7 @@ const projectsArr = [
 
   {
     title: "WeatherBoard",
-    img: "",
+    img: wx,
     github: "https://github.com/cibellem/react-wdashboard",
     app: "https://shrouded-sea-44886.herokuapp.com/",
     description:
@@ -85,18 +55,22 @@ const projectsArr = [
 ];
 
 const Projects = () => {
-  let array = [1, 2, 3];
-
   return (
     <ProjectSection>
-      <ProjectSessionHeader>Some Projects I worked on</ProjectSessionHeader>
-
+      <ProjectSessionHeader>
+        {" "}
+        <span className="marker">Some Projects I worked on </span>
+      </ProjectSessionHeader>
       {projectsArr.map((item) => (
         <ProjectBlock>
           <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
           <ProjectName>{item.title}</ProjectName>
-      
+          <ProjectImg src={item.img} />
           <ProjectText>{item.description}</ProjectText>
+          <a href={item.github}>
+            {" "}
+            <GitIcon src={github} />
+          </a>
         </ProjectBlock>
       ))}
     </ProjectSection>

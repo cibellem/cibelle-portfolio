@@ -12,11 +12,18 @@ const HeroWrapper = styled.div`
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px;
+
+  span {
+    text-decoration: line-through;
+    &:after {
+      color: red;
+    }
+  }
 `;
 
 const SmallHeader = styled.h4`
   font-family: "Josefin Sans";
-  font-size: 1rem;
+  font-size: clamp(1rem, 8vw, 1.2rem);
   color: black;
   margin: 0 0 10px 0;
   line-height: 1.2;
@@ -30,8 +37,7 @@ const Header = styled.h1`
 `;
 
 const SubHeader = styled.h2`
-  font-size: clamp(32px, 8vw, 60px);
-  white-space: nowrap;
+  font-size: clamp(32px, 8vw, 50px);
   color: black;
   margin: 0;
   line-height: 1.2;
@@ -39,7 +45,7 @@ const SubHeader = styled.h2`
 
 const Text = styled.p`
   font-family: "Josefin Sans";
-  font-size: 1rem;
+  font-size: clamp(1rem, 5vw, 1.6rem);
   color: black;
   margin: 10px 0 0 0;
   line-height: 1.4;
@@ -49,13 +55,15 @@ const Hero = () => {
   return (
     <motion.div
       opacity={0}
-      animate={{ y: -80, opacity: 1 }}
+      animate={{ opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
     >
       <HeroWrapper>
         <SmallHeader>Hi, my name is</SmallHeader>
         <Header>Cibelle Montor..</Header>
-        <SubHeader>Coding is my passion</SubHeader>
+        <SubHeader>
+          a happy little <span>camper</span> developer
+        </SubHeader>
         <Text>
           I’m a Software Engineer specialized in building Front and Backend
           applications. I love building scalable, out of the box and

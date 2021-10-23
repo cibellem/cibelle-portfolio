@@ -28,26 +28,11 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
-const Marker = styled.span`
-  position: relative;
-  &:before {
-    content: "";
-    background-color: #ffc00e;
-    width: 100%;
-    height: 1em;
-    position: absolute;
-    z-index: -1;
-    left: -0.25em;
-    top: 0.1em;
-    padding: 0 0.25em;
-  }
-`;
-
 const Contact = () => {
   return (
     <ContactWrapper>
       <ContactHeader>
-        <Marker>Reach out!</Marker>
+        <span className="marler">Reach out!</span>
       </ContactHeader>
       <Text>
         Interested in colaborating or just want to tell me you hate/love my
