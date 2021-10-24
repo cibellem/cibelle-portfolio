@@ -5,11 +5,13 @@ export const ProjectSection = styled.article`
   display: flex;
   gap: 30px;
   flex-direction: column;
-  ${mediaQueries("md")`
+  flex-flow: wrap;
+  ${mediaQueries("xl")`
     display: grid;      
     margin: auto;   
-    grid-template-columns: 34ch auto 33ch;
+    grid-template-columns: auto auto auto;
     justify-self: center;
+    width:100%;
     align-self: inherit;
     justify-items: center;
     align-items: center;
@@ -22,14 +24,16 @@ export const ProjectBlock = styled.div`
   border-left: 8px solid #0ef897;
   border-top: 8px solid #0ef897;
   border-right: 2px solid #0ef897;
-
   border-bottom: 2px solid #0ef897;
   box-shadow: -6px -5px 0px 0px #000000c9;
 
-  ${mediaQueries("md")`
-    width: 350px;
+  ${mediaQueries("md")` 
+    max-width: 95%;
+    min-width: 350px;
    &:hover {
-    transform: translate(1px, -40px);
+    background:red;
+    transition: 1.5s;
+    
   }
   `}
 `;

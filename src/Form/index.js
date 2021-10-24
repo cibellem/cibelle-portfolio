@@ -1,11 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../globalStyles";
 
 export const FormGroup = styled.div`
   display: block;
   width: 100%;
   background: #8edfbd;
   padding: 50px 20px;
+
+  ${mediaQueries("md")`
+    width: 50%;
+    
+  `}
 `;
 
 export const Label = styled.label`
@@ -37,6 +43,11 @@ export const Button = styled.button`
   margin: auto;
   border-radius: 47px;
   background: white;
+  box-shadow: -1px 6px 0px 0px;
+  &:hover {
+    box-shadow: -1px 3px 0px 0px;
+    transition: 0.4s;
+  }
 `;
 
 const Form = () => {

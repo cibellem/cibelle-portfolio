@@ -4,13 +4,22 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   float: right;
-  li {
-    padding: 18px 10px;
+  padding: 40px 40px 0 0;
+  a {
+    font-size: 1rem;
+    padding: 18px 16px;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+      transition: ease-out 0.2s;
+      border-bottom: 3px solid #0ef897;
+    }
   }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538;
+    background-color: #0d2538ed;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -24,8 +33,13 @@ const Ul = styled.ul`
     align-items: center;
     padding-left: 0;
     z-index: 2;
-    li {
+    a {
       color: #fff;
+      &:hover {
+        transform: none;
+        transition: ease-out 0.2s;
+        border-bottom: 3px solid #0ef897;
+      }
     }
   }
 `;

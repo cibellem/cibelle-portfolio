@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Form from "../Form";
+import { mediaQueries } from "../globalStyles";
 
 const ContactWrapper = styled.article`
   display: flex;
@@ -26,13 +27,21 @@ const Text = styled.p`
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 0;
+  ${mediaQueries("md")` 
+    font-size: 1.1rem;
+    line-height: 1.2;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+
+  ;`}
 `;
 
 const Contact = () => {
   return (
-    <ContactWrapper>
+    <ContactWrapper id="contact">
       <ContactHeader>
-        <span className="marler">Reach out!</span>
+        <span className="marker">Reach out!</span>
       </ContactHeader>
       <Text>
         Interested in colaborating or just want to tell me you hate/love my

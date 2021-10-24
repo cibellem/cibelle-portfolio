@@ -41,6 +41,8 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0 0.25em;
   }
 
+  
+
   ${mediaQueries("md")`
   font-size: 2.5rem;
   ;`}

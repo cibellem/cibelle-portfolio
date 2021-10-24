@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import styled from "styled-components";
 import NavBar from "../Nav/index";
 import { mediaQueries, GlobalStyles } from "../globalStyles";
@@ -15,6 +15,11 @@ const Container = styled.article`
 
   ${mediaQueries("md")`
   width: 80%
+    margin: 0px auto;
+    width: 100%;
+    /* max-width: 1600px; */
+    min-height: 100vh;
+    padding: 200px 150px;
   `}
 `;
 

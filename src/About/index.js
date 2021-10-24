@@ -16,14 +16,10 @@ const AboutWrapper = styled.article`
   gap: 20px;
 
   ${mediaQueries("md")`
-     display: flex;
-    margin: auto;    
-    -ms-flex-item-align: inherit;    
-    -ms-flex-align: center;
-    justify-items: self-start;
-    justify-content: stretch;
-    justify-self: start;
-    flex-direction: revert;
+    display: flex;
+    margin: 20vh 0;         
+    gap: 30px;
+ 
   `}
 `;
 
@@ -40,30 +36,38 @@ const Text = styled.p`
   margin-bottom: 0;
   text-indent: 20px;
   ${mediaQueries("md")`
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    text-indent: 0px;
+    line-height:1.2;
+    max-width: 80%
     
+  `}
+  ${mediaQueries("xl")`
+    max-width:60%
   `}
 `;
 
 const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <AboutHeader>
         <span className="marker"> About Me...</span>
       </AboutHeader>
 
-      <img src={cibelle} alt="" />
+      <img src={cibelle} alt="Cibelle's Headshot" />
       <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-        dolore ipsa excepturi ullam, nemo earum dicta minima animi cumque
-        necessitatibus, incidunt quos veniam esse aliquam officiis quod
-        laudantium recusandae? Fuga!
+        I'm Cibelle and I'm a Full Stack Javascript Developer who decided to
+        make her addiction for creating mIRC scripts into a profession. I'm a
+        former teacher who loves being exposed to different concepts, cultures
+        and people and I found in tech a place with endless oportunities to
+        pursue that.
       </Text>
       <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-        dolore ipsa excepturi ullam, nemo earum dicta minima animi cumque
-        necessitatibus, incidunt quos veniam esse aliquam officiis quod
-        laudantium recusandae? Fuga!
+        I put my heart into each and every project and my top priority is
+        delivering a final product that goes above and beyond client
+        expectations. I'm very much interested to add more skills to my list and
+        I expect to learn and be challenged in my next roles. When not coding I
+        love to hike, garden and play soccer. 😎
       </Text>
     </AboutWrapper>
   );

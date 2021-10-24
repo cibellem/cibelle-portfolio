@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import { mediaQueries } from "../globalStyles";
 
-export const Nav = styled.nav`
+export const Nav = styled.div`
+  display:block;
+  width:100%;
+  position: fixed;
+  height: 65px;
+  z-index:3;
+ 
+
   button {
+    
     position: absolute;
-    top: 3%;
+    top: 16px;
     right: 2rem;
     display: flex;
     flex-direction: column;
@@ -15,7 +23,7 @@ export const Nav = styled.nav`
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 3;
 
     &:focus {
       outline: none;
@@ -24,7 +32,7 @@ export const Nav = styled.nav`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: rgba(14, 248, 151, 0.26);
+    background: #0ef897;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -35,7 +43,7 @@ export const Nav = styled.nav`
     }
 
     &:nth-child(2) {
-      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
+      transform: ${({ open }) => (open ? "translateX(1%)" : "translateX(0)")};
       opacity: ${({ open }) => (open ? 0 : 1)};
     }
 
@@ -45,11 +53,32 @@ export const Nav = styled.nav`
 
      ${mediaQueries("md")`
       display:none
+     
   `}}}
+
+  ${mediaQueries("md")`
+  position: fixed;
+  transition:0.2s ;
+  display:block;
+  width:100%;
+  z-index:3
+
+  ;`}
+
+ 
 `;
 
 export const Logo = styled.img`
   position: absolute;
+  cursor: pointer;
   left: 1rem;
   top: 1.5%;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
+  ${mediaQueries("md")`
+   padding: 0 0 0 40px;
+  ;`}
 `;

@@ -1,16 +1,21 @@
 import * as React from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../globalStyles";
 
 const SkillWrapper = styled.article`
   display: flex;
   flex-direction: column;
   margin: 10vh 0;
+  ${mediaQueries("md")`
+  margin: 20vh 0
+  ;`}
 `;
 const StackWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 40px 0;
+  line-height: 1.3;
 `;
 
 const StackDiv = styled.div`
@@ -21,11 +26,19 @@ const StackDiv = styled.div`
 const StackHeader = styled.h4`
   font-size: 1rem;
   margin: 0;
+  ${mediaQueries("md")`
+  font-size: 1.2rem;
+  ;`}
 `;
 
 const Tool = styled.p`
   font-size: 1rem;
   margin: 0;
+  ${mediaQueries("md")` 
+    font-size: 1.1rem;
+    line-height: 1.2;
+
+  ;`}
 `;
 
 const ToolstHeader = styled.h4`
@@ -64,7 +77,7 @@ const skillsArr = [
 
 const Skills = () => {
   return (
-    <SkillWrapper>
+    <SkillWrapper id="skills">
       <ToolstHeader>
         <span className="marker">Tools</span>
       </ToolstHeader>

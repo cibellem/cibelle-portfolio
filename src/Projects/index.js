@@ -56,7 +56,7 @@ const projectsArr = [
 
 const Projects = () => {
   return (
-    <ProjectSection>
+    <ProjectSection id="projects">
       <ProjectSessionHeader>
         {" "}
         <span className="marker">Some Projects I worked on </span>
@@ -67,9 +67,12 @@ const Projects = () => {
           <ProjectName>{item.title}</ProjectName>
           <ProjectImg src={item.img} />
           <ProjectText>{item.description}</ProjectText>
-          <a href={item.github}>
+          <a target="_blank" rel="noreferrer" href={item.github}>
             {" "}
             <GitIcon src={github} />
+          </a>
+          <a href={item.app} rel="noreferrer" target="_blank">
+            Learn More
           </a>
         </ProjectBlock>
       ))}
