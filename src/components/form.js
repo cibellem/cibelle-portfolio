@@ -5,14 +5,14 @@ import "firebase/compat/firestore";
 // import firestore from "@firebase/firestore";
 
 let firebaseConfig = {
-  apiKey: "AIzaSyC52PAOtRTH6rW1ENR51KdSsSnKZTGqFGE",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "contact-form-portfolio-61dfa.firebaseapp.com",
-  databaseURL: "https://contact-form-portfolio-61dfa.firebaseio.com",
+  databaseURL: process.env.REACT_APP_DB_URL,
   projectId: "contact-form-portfolio-61dfa",
   storageBucket: "contact-form-portfolio-61dfa.appspot.com",
-  messagingSenderId: "808342677893",
-  appId: "1:808342677893:web:8047798b7e9e93fb2e3cec",
-  measurementId: "G-975E7P66D1",
+  messagingSenderId: process.env.REACT_APP_MSG_SENDER_ID,
+  appId: process.env.REACT_APP_API_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
