@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gh-pages -d build"
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
     "@fontsource/josefin-sans": "^4.5.0",
