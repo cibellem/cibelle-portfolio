@@ -1,33 +1,49 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import {
-  mediaQueries,
-  HeroHeader,
-  HeroSubHeader,
-  HeaderFour,
-  LargeText,
-} from "../globalStyles";
+import theme from "../../styles/theme";
+import { mediaQueries } from "../../styles/GlobalStyle";
+
+export const HeroHeader = styled.h1`
+  font-size: clamp(32px, 8vw, 60px);
+  color: ${theme.black};
+  margin: 0;
+  line-height: 1.2;
+`;
+
+export const HeroSubHeader = styled.h2`
+  font-size: clamp(32px, 8vw, 50px);
+  color: ${theme.black};
+  margin: 0;
+  line-height: 1.2;
+  span {
+    text-decoration: line-through;
+    color: ${theme.green};
+  }
+`;
+
+const LargeText = styled.p`
+  font-size: clamp(1rem, 5vw, 1.6rem);
+  color: ${theme.black};
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+
+  ${mediaQueries("md")`
+    max-width:80%
+  ;`}
+`;
 
 const HeroWrapper = styled.div`
-  font-family: "Josefin Sans";
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
   padding: 0px;
 
   ${mediaQueries("md")`
-  max-width: 1000px;
+ 	 max-width: 1000px;
   ;`}
-
-  span {
-    text-decoration: line-through;
-    color: #15a374;
-  }
 `;
 
 const Hero = () => {
@@ -38,7 +54,7 @@ const Hero = () => {
       transition={{ ease: "easeOut", duration: 1 }}
     >
       <HeroWrapper>
-        <HeaderFour>Hi, my name is</HeaderFour>
+        <h4>Hi, my name is</h4>
         <HeroHeader>Cibelle Montor..</HeroHeader>
         <HeroSubHeader>
           a happy little <span>camper</span> developer

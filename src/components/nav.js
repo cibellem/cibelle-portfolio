@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react";
+import Aside from "./aside";
+import logo from "../assets/clogo.png";
 import styled from "styled-components";
-import { mediaQueries } from "../globalStyles";
+import { mediaQueries } from "../styles/GlobalStyle";
 
 export const Nav = styled.div`
   display:block;
@@ -62,9 +65,7 @@ export const Nav = styled.div`
   width:100%;
   z-index:3
 
-  ;`}
-
- 
+  ;`} 
 `;
 
 export const Logo = styled.img`
@@ -81,3 +82,55 @@ export const Logo = styled.img`
    padding: 0 0 0 40px;
   ;`}
 `;
+
+const NavBar = () => {
+  const [open, setOpen] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  let prevScrollpos = window.pageYOffset;
+
+  const scrollTop = () => {
+    document.body.scrollTop = 20;
+  };
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
+
+  const show = {
+    top: "0",
+    backgroundColor: "#0d2538ed",
+    backdropFilter: "blur(3px)",
+  };
+
+  const hide = {
+    top: "-160px",
+  };
+
+  window.onscroll = () => {
+    //once scrolled set window position to current one and compare previous to current
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+      prevScrollpos = currentScrollPos;
+    }
+  };
+
+  return (
+    <Nav id="nav" style={showNav ? show : hide} open={open}>
+      <Logo onClick={scrollTop} src={logo} />
+      <button open={open} onClick={() => setOpen(!open)}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <Aside open={open} />
+    </Nav>
+  );
+};
+export default NavBar;

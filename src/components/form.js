@@ -4,7 +4,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 // import firestore from "@firebase/firestore";
 
-
 let firebaseConfig = {
   apiKey: "AIzaSyC52PAOtRTH6rW1ENR51KdSsSnKZTGqFGE",
   authDomain: "contact-form-portfolio-61dfa.firebaseapp.com",
@@ -24,25 +23,12 @@ const db = firestore.collection("contacts");
 export const FormGroup = styled.div`
   display: block;
   width: 75%;
-  background: #8edfbd;
+  background: #15a374;
   padding: 50px 20px;
+  border: 6px;
 `;
 
-export const Label = styled.label`
-  margin-bottom: 0.2em;
-  font-size: 0.8rem;
-  display: block;
-`;
-
-export const Input = styled.input`
-  padding: 0.5em;
-  border-radius: 2px;
-  width: 100%;
-  margin-bottom: 0.5em;
-  border: 1px solid;
-`;
-
-export const Message = styled.label`
+export const Message = styled.p`
   margin-bottom: 0.5em;
   display: block;
 `;
@@ -112,13 +98,13 @@ const Form = () => {
       value: email,
       id: "email",
       onChange: (e) => setEmail(e.target.value),
-      placelholder: "Your name goes here",
+      placelholder: "Your email goes here",
     },
     {
       value: message,
       id: "message",
       onChange: (e) => setMsg(e.target.value),
-      placelholder: "Your name goes here",
+      placelholder: "Your msg goes here",
     },
   ];
 
@@ -126,8 +112,8 @@ const Form = () => {
     <FormGroup>
       {FormProps.map((item) => (
         <section key={item.id}>
-          <Label htmlFor={item.id}>{item.id}</Label>
-          <Input onChange={item.onChange} value={item.value} id={item.id} />
+          <label htmlFor={item.id}>{item.id}</label>
+          <input onChange={item.onChange} value={item.value} id={item.id} />
         </section>
       ))}
       <Message>{!error ? null : error}</Message>

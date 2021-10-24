@@ -1,4 +1,7 @@
+import React from "react";
+import { Link } from "react-scroll";
 import styled from "styled-components";
+
 const Ul = styled.ul`
   list-style: none;
   display: flex;
@@ -45,4 +48,23 @@ const Ul = styled.ul`
   }
 `;
 
-export default Ul;
+const Aside = ({ open }) => {
+  return (
+    <Ul open={open}>
+      <Link to="projects" spy={true} smooth={true} duration={900}>
+        Projects
+      </Link>
+      <Link to="skills" spy={true} smooth={true} duration={1000}>
+        Skills
+      </Link>
+      <Link to="about" spy={true} smooth={true} duration={1500}>
+        About Me
+      </Link>
+      <Link to="contact" spy={true} smooth={true} duration={1000}>
+        Contact
+      </Link>
+    </Ul>
+  );
+};
+
+export default Aside;

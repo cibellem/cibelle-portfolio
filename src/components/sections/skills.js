@@ -1,6 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-import { mediaQueries } from "../globalStyles";
+import { skillsArr } from "../../utils/data";
+import { mediaQueries } from "../../styles/GlobalStyle";
+import * as Shared from "../../styles/shared";
 
 const SkillWrapper = styled.article`
   display: flex;
@@ -13,7 +15,8 @@ const SkillWrapper = styled.article`
    padding: 0 200px;
   ;`}
 `;
-const StackWrapper = styled.div`
+
+export const StackWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -21,13 +24,13 @@ const StackWrapper = styled.div`
   line-height: 1.3;
 `;
 
-const StackDiv = styled.div`
+export const StackDiv = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
 `;
 
-const StackHeader = styled.h4`
+export const StackHeader = styled.h4`
   font-size: 1rem;
   margin: 0 0 10px 0;
   ${mediaQueries("md")`
@@ -36,62 +39,18 @@ const StackHeader = styled.h4`
   ;`}
 `;
 
-const Tool = styled.p`
-  font-size: 1rem;
-  margin: 0;
-  ${mediaQueries("md")` 
-    font-size: 1.3rem;
-    line-height: 1.5;
-
-  ;`}
-`;
-
-const ToolstHeader = styled.h4`
-  font-size: 1.5rem;
-  text-align: center;
-  margin: 0;
-  font-weight: 400; ;
-`;
-
-const skillsArr = [
-  {
-    stack: "Front End",
-    tools: [
-      "JavaScript (ES6)",
-      "React",
-      "Ionic",
-      "Amplify",
-      "HTML",
-      "CSS/Scss",
-      "Styled Components",
-    ],
-  },
-  {
-    stack: "Back End",
-    tools: [
-      "Node.js",
-      "Express.js",
-      "AWS Lambda",
-      "AWS AppSync",
-      "NATS Streaming",
-      "Firebase",
-      "MongoDB",
-    ],
-  },
-];
-
 const Skills = () => {
   return (
     <SkillWrapper id="skills">
-      <ToolstHeader>
+      <Shared.SectionHeader>
         <span className="marker">Tools</span>
-      </ToolstHeader>
+      </Shared.SectionHeader>
       <StackWrapper>
         {skillsArr.map((item) => (
           <StackDiv key={item.stack}>
             <StackHeader>{item.stack}</StackHeader>
-            {item.tools.map((i) => (
-              <Tool>{i}</Tool>
+            {item.tools.map((tool) => (
+              <Shared.Paragraph>{tool}</Shared.Paragraph>
             ))}
           </StackDiv>
         ))}

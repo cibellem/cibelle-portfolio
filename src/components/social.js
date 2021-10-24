@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { FaLinkedinIn, FaGithub, FaMailBulk } from "react-icons/fa";
-import { mediaQueries } from "../globalStyles";
+import { mediaQueries } from "../styles/GlobalStyle";
 
-const SocialDiv = styled.div`
+const StyledSocial = styled.div`
   display: none;
 
   ${mediaQueries("md")`
@@ -20,6 +20,7 @@ const SocialDiv = styled.div`
     flex-direction: column;
     margin-bottom: 100px;
   }
+
   li {
     list-style: none;
     margin: 15px 0;
@@ -30,20 +31,18 @@ const SocialDiv = styled.div`
       transition-duration: 300ms;
     }
   }
+
   svg {
     font-size: 1.6em;
     color: rgb(13 37 56 / 59%);
-	&:hover{
+	  &:hover{
 		color:rgba(13, 37, 56, 0.93)
-
-	}
-  }
- ;`};
+	}};`};
 `;
 
 const Social = () => {
   return (
-    <SocialDiv orientation="left">
+    <StyledSocial orientation="left">
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/cibelle-montor-2a1a58157/">
@@ -62,7 +61,7 @@ const Social = () => {
           </a>
         </li>
       </ul>
-    </SocialDiv>
+    </StyledSocial>
   );
 };
 

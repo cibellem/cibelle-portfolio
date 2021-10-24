@@ -1,5 +1,8 @@
+import * as React from "react";
 import styled from "styled-components";
-import { mediaQueries } from "../globalStyles";
+import github from "../../assets/github.png";
+import { projectsArr } from "../../utils/data";
+import { mediaQueries } from "../../styles/GlobalStyle";
 
 export const ProjectSection = styled.article`
   display: flex;
@@ -15,7 +18,6 @@ export const ProjectSection = styled.article`
     padding: 40px 80px
   `}
 `;
-
 export const ProjectBlock = styled.div`
   border-radius: 5px;
   padding: 20px;
@@ -75,3 +77,30 @@ export const GitIcon = styled.img`
   text-align: center;
   float: right;
 `;
+
+const Projects = () => {
+  return (
+    <ProjectSection id="projects">
+      <ProjectSessionHeader>
+        {" "}
+        <span className="marker">Sample projects </span>
+      </ProjectSessionHeader>
+      {projectsArr.map((item) => (
+        <ProjectBlock key={item.title}>
+          <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
+          <ProjectName>{item.title}</ProjectName>
+          <ProjectImg src={item.img} />
+          <ProjectText>{item.description}</ProjectText>
+          <a target="_blank" rel="noreferrer" href={item.github}>
+            {" "}
+            <GitIcon src={github} />
+          </a>
+          <a href={item.app} rel="noreferrer" target="_blank">
+            Learn More
+          </a>
+        </ProjectBlock>
+      ))}
+    </ProjectSection>
+  );
+};
+export default Projects;
