@@ -1,6 +1,13 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import {
+  mediaQueries,
+  HeroHeader,
+  HeroSubHeader,
+  HeaderFour,
+  LargeText,
+} from "../globalStyles";
 
 const HeroWrapper = styled.div`
   font-family: "Josefin Sans";
@@ -13,42 +20,14 @@ const HeroWrapper = styled.div`
   min-height: 100vh;
   padding: 0px;
 
+  ${mediaQueries("md")`
+  max-width: 1000px;
+  ;`}
+
   span {
     text-decoration: line-through;
-    &:after {
-      color: red;
-    }
+    color: #15a374;
   }
-`;
-
-const SmallHeader = styled.h4`
-  font-family: "Josefin Sans";
-  font-size: clamp(1rem, 8vw, 1.2rem);
-  color: black;
-  margin: 0 0 10px 0;
-  line-height: 1.2;
-`;
-
-const Header = styled.h1`
-  font-size: clamp(32px, 8vw, 60px);
-  color: black;
-  margin: 0;
-  line-height: 1.2;
-`;
-
-const SubHeader = styled.h2`
-  font-size: clamp(32px, 8vw, 50px);
-  color: black;
-  margin: 0;
-  line-height: 1.2;
-`;
-
-const Text = styled.p`
-  font-family: "Josefin Sans";
-  font-size: clamp(1rem, 5vw, 1.6rem);
-  color: black;
-  margin: 10px 0 0 0;
-  line-height: 1.4;
 `;
 
 const Hero = () => {
@@ -59,16 +38,16 @@ const Hero = () => {
       transition={{ ease: "easeOut", duration: 1 }}
     >
       <HeroWrapper>
-        <SmallHeader>Hi, my name is</SmallHeader>
-        <Header>Cibelle Montor..</Header>
-        <SubHeader>
+        <HeaderFour>Hi, my name is</HeaderFour>
+        <HeroHeader>Cibelle Montor..</HeroHeader>
+        <HeroSubHeader>
           a happy little <span>camper</span> developer
-        </SubHeader>
-        <Text>
+        </HeroSubHeader>
+        <LargeText>
           I’m a Software Engineer specialized in building Front and Backend
           applications. I love building scalable, out of the box and
           straightforward solutions.{" "}
-        </Text>
+        </LargeText>
       </HeroWrapper>
     </motion.div>
   );

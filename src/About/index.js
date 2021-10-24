@@ -19,6 +19,7 @@ const AboutWrapper = styled.article`
     display: flex;
     margin: 20vh 0;         
     gap: 30px;
+    padding: 40px 100px
  
   `}
 `;
@@ -36,14 +37,12 @@ const Text = styled.p`
   margin-bottom: 0;
   text-indent: 20px;
   ${mediaQueries("md")`
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-indent: 0px;
     line-height:1.2;
-    max-width: 80%
+    max-widht: 90%;
+  
     
-  `}
-  ${mediaQueries("xl")`
-    max-width:60%
   `}
 `;
 

@@ -24,7 +24,7 @@ const NavBar = () => {
 
   const show = {
     top: "0",
-    backgroundColor: "rgb(14 248 151 / 28%)",
+    backgroundColor: "#0d2538ed",
     backdropFilter: "blur(3px)",
   };
 
@@ -37,13 +37,8 @@ const NavBar = () => {
     let currentScrollPos = window.pageYOffset;
 
     if (prevScrollpos > currentScrollPos) {
-      // document.querySelector("#nav").style.top = "0";
-      // document.querySelector("#nav").style.backgroundColor =
-      //   "rgb(14 248 151 / 28%)";
-      // document.querySelector("#nav").style.backdropFilter = "blur(3px)";
       setShowNav(true);
     } else {
-      // document.querySelector("#nav").style.top = "-160px";
       setShowNav(false);
       prevScrollpos = currentScrollPos;
     }

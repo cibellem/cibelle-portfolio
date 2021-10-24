@@ -6,8 +6,11 @@ const SkillWrapper = styled.article`
   display: flex;
   flex-direction: column;
   margin: 10vh 0;
+  line-height: 1.3;
+
   ${mediaQueries("md")`
   margin: 20vh 0
+   padding: 0 200px;
   ;`}
 `;
 const StackWrapper = styled.div`
@@ -21,13 +24,15 @@ const StackWrapper = styled.div`
 const StackDiv = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 20px;
 `;
 
 const StackHeader = styled.h4`
   font-size: 1rem;
-  margin: 0;
+  margin: 0 0 10px 0;
   ${mediaQueries("md")`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color:#15a374;
   ;`}
 `;
 
@@ -35,8 +40,8 @@ const Tool = styled.p`
   font-size: 1rem;
   margin: 0;
   ${mediaQueries("md")` 
-    font-size: 1.1rem;
-    line-height: 1.2;
+    font-size: 1.3rem;
+    line-height: 1.5;
 
   ;`}
 `;
@@ -83,7 +88,7 @@ const Skills = () => {
       </ToolstHeader>
       <StackWrapper>
         {skillsArr.map((item) => (
-          <StackDiv>
+          <StackDiv key={item.stack}>
             <StackHeader>{item.stack}</StackHeader>
             {item.tools.map((i) => (
               <Tool>{i}</Tool>

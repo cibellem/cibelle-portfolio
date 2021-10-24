@@ -4,16 +4,17 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   float: right;
-  padding: 40px 40px 0 0;
+  padding: 0 40px 0 0;
   a {
-    font-size: 1rem;
-    padding: 18px 16px;
+    font-size: 1.2rem;
+    padding: 10px 16px;
     cursor: pointer;
+    color: #7f7f7f;
 
     &:hover {
       transform: translateY(-5px);
       transition: ease-out 0.2s;
-      border-bottom: 3px solid #0ef897;
+      border-bottom: 5px solid #15a374;
     }
   }
 

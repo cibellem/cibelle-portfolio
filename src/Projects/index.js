@@ -30,7 +30,8 @@ const projectsArr = [
     img: shelfie,
     github: "https://g;ithub.com/cibellem/react-bookSearch",
     app: "https://react-book-shelfie.herokuapp.com/",
-    description: "Book search built using Google Books API.",
+    description:
+      "Book search built using Google Books API. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda at quas illo ea magnam magni optio commodi ipsa provident. ",
     type: "Front End",
   },
   {
@@ -62,11 +63,12 @@ const Projects = () => {
         <span className="marker">Some Projects I worked on </span>
       </ProjectSessionHeader>
       {projectsArr.map((item) => (
-        <ProjectBlock>
+        <ProjectBlock key={item.title}>
           <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
           <ProjectName>{item.title}</ProjectName>
           <ProjectImg src={item.img} />
           <ProjectText>{item.description}</ProjectText>
+
           <a target="_blank" rel="noreferrer" href={item.github}>
             {" "}
             <GitIcon src={github} />

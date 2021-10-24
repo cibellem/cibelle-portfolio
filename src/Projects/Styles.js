@@ -6,33 +6,32 @@ export const ProjectSection = styled.article`
   gap: 30px;
   flex-direction: column;
   flex-flow: wrap;
-  ${mediaQueries("xl")`
-    display: grid;      
-    margin: auto;   
-    grid-template-columns: auto auto auto;
-    justify-self: center;
-    width:100%;
-    align-self: inherit;
+  ${mediaQueries("xl")`         
+    margin: auto;
+    display:grid;   
+    width:100%;  
     justify-items: center;
     align-items: center;
+    padding: 40px 80px
   `}
 `;
 
 export const ProjectBlock = styled.div`
   border-radius: 5px;
   padding: 20px;
-  border-left: 8px solid #0ef897;
-  border-top: 8px solid #0ef897;
-  border-right: 2px solid #0ef897;
-  border-bottom: 2px solid #0ef897;
+  border-left: 8px solid #15a374;
+  border-top: 8px solid #15a374;
+  border-right: 2px solid #15a374;
+  border-bottom: 2px solid #15a374;
   box-shadow: -6px -5px 0px 0px #000000c9;
 
-  ${mediaQueries("md")` 
-    max-width: 95%;
-    min-width: 350px;
+  ${mediaQueries("md")`   
+   width: 90%;
+   min-width: 330px;
+   height: 100%;
    &:hover {
-    background:red;
-    transition: 1.5s;
+    background:#0ef897;
+    transition: ease-in 1.5s;
     
   }
   `}
@@ -45,6 +44,11 @@ export const ProjectName = styled.h5`
 
 export const ProjectText = styled.p`
   font-size: 1rem;
+
+  ${mediaQueries("md")`
+  font-size: 1.2rem
+  max-width: 800px;
+  ;`}
 `;
 
 export const ProjectMiniHeader = styled.h6`
@@ -62,7 +66,7 @@ export const ProjectSessionHeader = styled.h3`
 `;
 
 export const ProjectImg = styled.img`
-  width: 100%;
+  width: 90%;
   opacity: 0.9;
 `;
 

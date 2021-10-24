@@ -9,8 +9,7 @@ export const Nav = styled.div`
   z-index:3;
  
 
-  button {
-    
+  button {    
     position: absolute;
     top: 16px;
     right: 2rem;
@@ -32,7 +31,7 @@ export const Nav = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: #0ef897;
+    background:  #15a374;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
