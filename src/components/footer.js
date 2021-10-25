@@ -4,10 +4,10 @@ import styled from "styled-components";
 const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background-color: black;
-  margin-top: 30px;
+  margin: 30px 0 0 0;
   padding: 20px 0;
 
   span {
@@ -19,7 +19,7 @@ const StyledFooter = styled.div`
 
   p {
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
     margin: 0;
   }

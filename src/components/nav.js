@@ -96,10 +96,9 @@ const hide = {
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
-  let prevScrollpos = window.pageYOffset;
+  const isBrowser = typeof window !== "undefined";
 
   useEffect(() => {
-    console.log(window.outerWidth);
     if (open && window.outerWidth >= "768") {
       document.body.style.overflow = "hidden";
     } else {
@@ -107,23 +106,26 @@ const NavBar = () => {
     }
   }, [open]);
 
+  if (isBrowser) {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = () => {
+      //once scrolled set window position to current one and compare previous to current
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
+        prevScrollpos = currentScrollPos;
+      }
+    };
+  }
+
   const scrollTop = () => {
     document.body.scrollTop = 20;
   };
 
   const closeNav = () => {
     setOpen(!open);
-  };
-
-  window.onscroll = () => {
-    //once scrolled set window position to current one and compare previous to current
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-      prevScrollpos = currentScrollPos;
-    }
   };
 
   return (

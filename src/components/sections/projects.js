@@ -83,7 +83,7 @@ const Projects = () => {
     <ProjectSection id="projects">
       <ProjectSessionHeader>
         {" "}
-        <span className="marker">Sample projects </span>
+        <span className="marker">Sample Projects </span>
       </ProjectSessionHeader>
       {projectsArr.map((item) => (
         <ProjectBlock key={item.title}>

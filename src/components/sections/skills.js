@@ -31,11 +31,12 @@ export const StackDiv = styled.div`
 `;
 
 export const StackHeader = styled.h4`
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: #15a374;
   margin: 0 0 10px 0;
   ${mediaQueries("md")`
   font-size: 1.5rem;
-  color:#15a374;
+ 
   ;`}
 `;
 

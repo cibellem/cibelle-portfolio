@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mediaQueries } from "./GlobalStyle";
 
 export const SectionHeader = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   margin: 0;
   font-weight: 400;
@@ -12,7 +12,7 @@ export const SectionHeader = styled.h3`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 0;
 

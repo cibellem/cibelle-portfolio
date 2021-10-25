@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
+import { mediaQueries } from "../styles/GlobalStyle";
 // import firestore from "@firebase/firestore";
 
 let firebaseConfig = {
@@ -22,10 +23,14 @@ const db = firestore.collection("contacts");
 
 export const FormGroup = styled.div`
   display: block;
-  width: 75%;
+  width: 90%;
   background: #15a374;
   padding: 50px 20px;
   border: 6px;
+
+  ${mediaQueries("md")`
+  width: 75%;
+  ;`}
 `;
 
 export const Message = styled.p`
