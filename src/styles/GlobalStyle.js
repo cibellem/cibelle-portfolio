@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   label {
-    margin-bottom: 0.2em;
+  margin-bottom: 0.2em;
   font-size: 0.8rem;
   display: block;
 

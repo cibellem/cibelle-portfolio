@@ -18,7 +18,7 @@ export const HeroSubHeader = styled.h2`
   line-height: 1.2;
   span {
     text-decoration: line-through;
-    color: ${theme.green};
+    color: #15a374;
   }
 `;
 

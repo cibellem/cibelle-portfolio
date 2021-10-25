@@ -83,31 +83,36 @@ export const Logo = styled.img`
   ;`}
 `;
 
+const show = {
+  top: "0",
+  backgroundColor: "#0d2538ed",
+  backdropFilter: "blur(3px)",
+};
+
+const hide = {
+  top: "-160px",
+};
+
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
   let prevScrollpos = window.pageYOffset;
 
-  const scrollTop = () => {
-    document.body.scrollTop = 20;
-  };
-
   useEffect(() => {
-    if (open) {
+    console.log(window.outerWidth);
+    if (open && window.outerWidth >= "768") {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
   }, [open]);
 
-  const show = {
-    top: "0",
-    backgroundColor: "#0d2538ed",
-    backdropFilter: "blur(3px)",
+  const scrollTop = () => {
+    document.body.scrollTop = 20;
   };
 
-  const hide = {
-    top: "-160px",
+  const closeNav = () => {
+    setOpen(!open);
   };
 
   window.onscroll = () => {
@@ -129,7 +134,7 @@ const NavBar = () => {
         <div></div>
         <div></div>
       </button>
-      <Aside open={open} />
+      <Aside closeNav={closeNav} open={open} />
     </Nav>
   );
 };
