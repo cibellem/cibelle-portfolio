@@ -10,8 +10,7 @@ export const scaleUp = keyframes`
         opacity: 0;
     }
     100%{
-        transform: scale(1);
-       
+        transform: scale(1);       
         opacity: 1;
     }
 ;`;
@@ -21,6 +20,18 @@ export const ProjectSection = styled.article`
   gap: 30px;
   flex-direction: column;
   flex-flow: wrap;
+
+  a:nth-child(2) {
+    color: green;
+    display: flex;
+    margin-top: 10px;
+    font-size: 1.125rem;
+
+    &:hover {
+      color: #008000ba;
+    }
+  }
+
   ${mediaQueries("xl")`         
     margin: auto;
     display:grid;   
@@ -48,16 +59,6 @@ export const ProjectBlock = styled.div`
    width: 80%;
    min-width: 330px;
    height: 100%;
-   &:hover {  
-    transition: ease-in 1.1s;
-    -webkit-transition: ease-in 1.1s;
-    transition: ease-in 1.1s;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg/330px-The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg);
-    position: static;
-    background-repeat: repeat-x;
-    background-position: center;
-    
-  }
   `};
 `;
 

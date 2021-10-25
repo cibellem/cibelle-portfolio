@@ -39,12 +39,10 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const isBrowser = typeof window !== "undefined";
 
   const handleScroll = debounce(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
-    // set state based on location info (explained in more detail below)
     setVisible(
       (prevScrollPos > currentScrollPos &&
         prevScrollPos - currentScrollPos > 50) ||
@@ -54,14 +52,13 @@ const NavBar = () => {
     setPrevScrollPos(currentScrollPos);
   }, 100);
 
-  // new useEffect:
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
   useEffect(() => {
+    console.log(window.outerWidth);
     if (open && window.outerWidth >= "768") {
       document.body.style.overflow = "hidden";
     } else {
@@ -74,7 +71,7 @@ const NavBar = () => {
   };
 
   const closeNav = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   return (
