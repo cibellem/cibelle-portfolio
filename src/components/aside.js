@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
-import * as Shared from "../styles/shared";
 import resume from "../Assets/resume.pdf";
+import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
 const Ul = styled.ul`
   list-style: none;
@@ -51,46 +51,42 @@ const Ul = styled.ul`
   }
 `;
 
+const linksArr = ["projects", " skills", "about me", "contact"];
+
 const Aside = ({ open, closeNav }) => {
   return (
     <Ul open={open}>
-      <Link
-        onClick={closeNav}
-        to="projects"
-        spy={true}
-        smooth={true}
-        duration={900}
+      {linksArr.forEach((item) => (
+        <Link
+          onClick={closeNav}
+          spy={true}
+          smooth={true}
+          duration={900}
+          to={item}
+        >
+          {item}
+        </Link>
+      ))}
+      <a
+        onClick={(e) => {
+          // To stop the page reloading
+          e.preventDefault();
+          // Lets track that custom click
+          trackCustomEvent({
+            // string - required - The object that was interacted with (e.g.video)
+            category: "Special Button",
+            // string - required - Type of interaction (e.g. 'play')
+            action: "Click",
+            // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
+            label: "Gatsby Plugin Example Campaign",
+            // number - optional - Numeric value associated with the event. (e.g. A product ID)
+            value: 43,
+          });
+        }}
+        href={resume}
       >
-        Projects
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="skills"
-        spy={true}
-        smooth={true}
-        duration={1000}
-      >
-        Skills
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="about"
-        spy={true}
-        smooth={true}
-        duration={1500}
-      >
-        About Me
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="contact"
-        spy={true}
-        smooth={true}
-        duration={1000}
-      >
-        Contact
-      </Link>
-      <a href={resume}>Resume</a>
+        Resume
+      </a>
     </Ul>
   );
 };
