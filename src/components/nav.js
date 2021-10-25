@@ -3,7 +3,7 @@ import styled from "styled-components";
 //Custom
 import { mediaQueries } from "../styles/GlobalStyle";
 import { debounce } from "../utils/helpers";
-import logo from "../assets/cmlogo.svg";
+import logo from "../images/cmlogo.svg";
 import BurguerMenu from "./burguer";
 import Aside from "./aside";
 
