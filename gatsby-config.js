@@ -1,13 +1,11 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://cibellemontor.com",
-    title: "Cibelle Portfolio",
+    siteUrl: "https://www.cibellemontor.com",
+    title: "cib-portfolio",
   },
   plugins: [
-    "gatsby-plugin-sass",
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
-
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -22,6 +20,7 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    "gatsby-transformer-remark",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

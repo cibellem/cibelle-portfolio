@@ -86,7 +86,7 @@ export const Logo = styled.img`
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
-  const isBrowser = typeof window !== "undefined";
+  let prevScrollpos = window.pageYOffset;
 
   const scrollTop = () => {
     document.body.scrollTop = 20;
@@ -98,20 +98,6 @@ const NavBar = () => {
     } else {
       document.body.style.overflow = "visible";
     }
-
-    if (isBrowser) {
-      let prevScrollpos = window.pageYOffset;
-      window.onscroll = () => {
-        //once scrolled set window position to current one and compare previous to current
-        let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          setShowNav(true);
-        } else {
-          setShowNav(false);
-          prevScrollpos = currentScrollPos;
-        }
-      };
-    }
   }, [open]);
 
   const show = {
@@ -122,6 +108,17 @@ const NavBar = () => {
 
   const hide = {
     top: "-160px",
+  };
+
+  window.onscroll = () => {
+    //once scrolled set window position to current one and compare previous to current
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+      prevScrollpos = currentScrollPos;
+    }
   };
 
   return (
