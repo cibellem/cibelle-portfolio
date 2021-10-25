@@ -51,9 +51,8 @@ const About = () => {
         pursue that.
       </p>
       <p>
-        I put my heart into each and every project I join and I have contributed
-        to several projects with tech such as React, Node and AWS. I love
-        thinkering around and I'm very much interested to add more skills to my
+        I have wroked on projects with toold such as React, Node and AWS. I love
+        tinkering around and I'm very much interested to add more skills to my
         list. I do expect to learn and be challenged in my next roles. I do
         spend a lot of time coding but when doing it I I love to hike, garden
         and play soccer. 😎

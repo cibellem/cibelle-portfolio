@@ -58,8 +58,7 @@ const NavBar = () => {
   }, [prevScrollPos, visible, handleScroll]);
 
   useEffect(() => {
-    console.log(window.outerWidth);
-    if (open && window.outerWidth >= "768") {
+      if (open && window.outerWidth >= "768") {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
