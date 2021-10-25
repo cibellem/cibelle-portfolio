@@ -25,17 +25,21 @@ export const FormGroup = styled.div`
   display: block;
   width: 90%;
   background: #15a374;
-  padding: 50px 20px;
   border: 6px;
+  padding: 50px 15px;
+  border-radius: 10px;
 
   ${mediaQueries("md")`
   width: 75%;
-  ;`}
+  padding: 50px 60px;
+  ;`};
 `;
 
-export const Message = styled.p`
-  margin-bottom: 0.5em;
+export const Message = styled.span`
+  margin-bottom: 0.3em;
+  font-size: 0.9rem;
   display: block;
+  color: white;
 `;
 
 export const Button = styled.button`

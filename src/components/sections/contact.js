@@ -2,7 +2,6 @@ import * as React from "react";
 import Form from "../form";
 import styled from "styled-components";
 import { mediaQueries } from "../../styles/GlobalStyle";
-import resume from "../../assets/cibelle-resume.pdf";
 import * as Shared from "../../styles/shared";
 
 const ContactWrapper = styled.article`
@@ -14,20 +13,23 @@ const ContactWrapper = styled.article`
   gap: 20px;
 
   ${mediaQueries("md")`
-   padding: 0 50px;
-  
+   padding: 0 50px;  
   ;`}
 `;
 
 export const Text = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
+  text-align: center;
   margin-bottom: 0;
+  width: 100%;
+
   ${mediaQueries("md")` 
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.2;
-    width: 50%;
+    width: 70%;
     margin: auto;
+    padding:20px;
     text-align: center;
 
   ;`}
@@ -43,12 +45,6 @@ const Contact = () => {
         website? Drop me a message!
       </Text>
       <Form />
-
-      <div>
-        <a href={resume}>
-          <Shared.ResumeButton>Resume</Shared.ResumeButton>
-        </a>
-      </div>
     </ContactWrapper>
   );
 };

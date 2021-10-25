@@ -7,15 +7,30 @@ import * as Shared from "../../styles/shared";
 const AboutWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
   align-items: center;
   margin: 10vh 0;
   gap: 20px;
 
+  img {
+    padding: 20px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 0px 0px;
+    margin: 0;
+
+    ${mediaQueries("md")`
+      padding: 10px 70px;
+      line-height:1.3;
+   
+  `}
+  }
+
   ${mediaQueries("md")`    
     margin: 20vh 0;         
-    gap: 30px;
     padding: 0px 40px 
   `}
 `;
@@ -27,20 +42,22 @@ const About = () => {
         <span className="marker"> About Me...</span>
       </Shared.SectionHeader>
       <img src={cibelle} alt="Cibelle's Headshot" />
-      <Shared.Paragraph>
-        I'm Cibelle and I'm a Full Stack Javascript Developer who decided to
-        make her addiction for creating mIRC scripts into a profession. I'm a
-        former teacher who loves being exposed to different concepts, cultures
+      <p>
+        Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack
+        Developer who decided to make her addiction for creating mIRC(Internet
+        Relay Chat client, **for th youngers) scripts into a profession. I am
+        curious by nature and love being exposed to different concepts, cultures
         and people and I found in tech a place with endless oportunities to
         pursue that.
-      </Shared.Paragraph>
-      <Shared.Paragraph>
-        I put my heart into each and every project and my top priority is
-        delivering a final product that goes above and beyond client
-        expectations. I'm very much interested to add more skills to my list and
-        I expect to learn and be challenged in my next roles. When not coding I
-        love to hike, garden and play soccer. 😎
-      </Shared.Paragraph>
+      </p>
+      <p>
+        I put my heart into each and every project I join and I have contributed
+        to several projects with tech such as React, Node and AWS. I love
+        thinkering around and I'm very much interested to add more skills to my
+        list. I do expect to learn and be challenged in my next roles. I do
+        spend a lot of time coding but when doing it I I love to hike, garden
+        and play soccer. 😎
+      </p>
     </AboutWrapper>
   );
 };

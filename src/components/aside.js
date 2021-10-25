@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-scroll";
 import styled from "styled-components";
+import * as Shared from "../styles/shared";
+import resume from "../Assets/resume.pdf";
 
 const Ul = styled.ul`
   list-style: none;
@@ -8,6 +10,7 @@ const Ul = styled.ul`
   flex-flow: row nowrap;
   float: right;
   padding: 0 40px 0 0;
+
   a {
     font-size: 1.2rem;
     padding: 10px 16px;
@@ -16,14 +19,14 @@ const Ul = styled.ul`
 
     &:hover {
       transform: translateY(-5px);
-      transition: ease-out 0.2s;
+      transition: ease-out 0.3s;
       border-bottom: 5px solid #15a374;
     }
   }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538ed;
+    background-color: #152c3e;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
@@ -32,7 +35,7 @@ const Ul = styled.ul`
     height: 100vh;
     width: 257px;
     padding-top: 3.5rem;
-    transition: ease-out transform 1s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+    transition: ease-out transform 1.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
     justify-content: center;
     align-items: center;
     padding-left: 0;
@@ -87,6 +90,7 @@ const Aside = ({ open, closeNav }) => {
       >
         Contact
       </Link>
+      <a href={resume}>Resume</a>
     </Ul>
   );
 };

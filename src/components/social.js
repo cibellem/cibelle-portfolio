@@ -14,6 +14,9 @@ const StyledSocial = styled.div`
   left: 30px;
   right: auto;
   z-index: 10;
+  heigth: 100%;
+  top:45%;
+
 
   ul {
     display: flex;
@@ -25,17 +28,17 @@ const StyledSocial = styled.div`
     list-style: none;
     margin: 15px 0;
     &:hover {
-      transform: translateY(-10px);
-      transition: ease-in-out;
-      transition-delay: 100ms;
-      transition-duration: 300ms;
+      transform:translateX(50px);
+      transition: ease-in-out 3s;
+      transition-delay: 150ms;
+     
     }
   }
 
   svg {
     font-size: 1.6em;
-    color: rgb(13 37 56 / 59%);
-	  &:hover{
+    color: #15a374;;
+	  &:hover {
 		color:rgba(13, 37, 56, 0.93)
 	}};`};
 `;

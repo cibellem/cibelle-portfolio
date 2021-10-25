@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import colors from "./theme";
 import styled from "styled-components";
+import colors from "./theme";
+
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -32,8 +33,10 @@ export const GlobalStyles = createGlobalStyle`
 
   label {
   margin-bottom: 0.2em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: block;
+  font-weight:400;
+  text-transform: uppercase;
 
   }
 
@@ -99,3 +102,5 @@ export const Container = styled.article`
     max-width: 1600px;
   `}
 `;
+
+

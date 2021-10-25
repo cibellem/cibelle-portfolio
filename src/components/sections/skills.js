@@ -10,9 +10,18 @@ const SkillWrapper = styled.article`
   margin: 10vh 0;
   line-height: 1.3;
 
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
   ${mediaQueries("md")`
   margin: 20vh 0
-   padding: 0 200px;
+  padding: 100px 200px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   ;`}
 `;
 
@@ -21,7 +30,6 @@ export const StackWrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 40px 0;
-  line-height: 1.3;
 `;
 
 export const StackDiv = styled.div`
@@ -46,16 +54,14 @@ const Skills = () => {
       <Shared.SectionHeader>
         <span className="marker">Tools</span>
       </Shared.SectionHeader>
-      <StackWrapper>
-        {skillsArr.map((item) => (
-          <StackDiv key={item.stack}>
-            <StackHeader>{item.stack}</StackHeader>
-            {item.tools.map((tool) => (
-              <Shared.Paragraph>{tool}</Shared.Paragraph>
-            ))}
-          </StackDiv>
-        ))}
-      </StackWrapper>
+      {skillsArr.map((item) => (
+        <StackDiv key={item.stack}>
+          <StackHeader>{item.stack}</StackHeader>
+          {item.tools.map((tool) => (
+            <p>{tool}</p>
+          ))}
+        </StackDiv>
+      ))}
     </SkillWrapper>
   );
 };

@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.cibellemontor.com",
     title: "Cibelle Portfolio",
+    pathPrefix: "/cibelle-portfolio",
   },
   plugins: [
     "gatsby-plugin-sass",

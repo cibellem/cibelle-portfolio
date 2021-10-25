@@ -1,102 +1,65 @@
 import React, { useState, useEffect } from "react";
-import Aside from "./aside";
-import logo from "../assets/clogo.png";
 import styled from "styled-components";
+//Custom
 import { mediaQueries } from "../styles/GlobalStyle";
+import { debounce } from "../utils/helpers";
+import logo from "../assets/cmlogo.svg";
+import BurguerMenu from "./burguer";
+import Aside from "./aside";
 
 export const Nav = styled.div`
-  display:block;
-  width:100%;
-  position: fixed;
+  display: block;
+  width: 100%;
   height: 65px;
-  z-index:3;
- 
-
-  button {    
-    position: absolute;
-    top: 16px;
-    right: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 3;
-
-    &:focus {
-      outline: none;
-    }
-  }
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background:  #15a374;
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-
-    &:nth-child(1) {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
-    }
-
-    &:nth-child(2) {
-      transform: ${({ open }) => (open ? "translateX(1%)" : "translateX(0)")};
-      opacity: ${({ open }) => (open ? 0 : 1)};
-    }
-
-    &:nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
-    }
-
-     ${mediaQueries("md")`
-      display:none
-     
-  `}}}
-
-  ${mediaQueries("md")`
+  z-index: 3;
   position: fixed;
-  transition:0.2s ;
-  display:block;
-  width:100%;
-  z-index:3
-
-  ;`} 
+  background-color: #152c3e;
+  transition: top 0.5s ease-in-out;
+  animation-delay: 200ms;
 `;
 
 export const Logo = styled.img`
   position: absolute;
   cursor: pointer;
   left: 1rem;
-  top: 1.5%;
+  top: 6px;
 
   &:hover {
     transform: scale(0.95);
   }
-
   ${mediaQueries("md")`
    padding: 0 0 0 40px;
+   opacity: 0.8;
+   transform: scale(0.9);
+   
   ;`}
 `;
 
-const show = {
-  top: "0",
-  backgroundColor: "#0d2538ed",
-  backdropFilter: "blur(3px)",
-};
-
-const hide = {
-  top: "-160px",
-};
-
 const NavBar = () => {
   const [open, setOpen] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   const isBrowser = typeof window !== "undefined";
+
+  const handleScroll = debounce(() => {
+    // find current scroll position
+    const currentScrollPos = window.pageYOffset;
+    // set state based on location info (explained in more detail below)
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 50) ||
+        currentScrollPos < 10
+    );
+    // set state to new scroll position
+    setPrevScrollPos(currentScrollPos);
+  }, 100);
+
+  // new useEffect:
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
 
   useEffect(() => {
     if (open && window.outerWidth >= "768") {
@@ -105,20 +68,6 @@ const NavBar = () => {
       document.body.style.overflow = "visible";
     }
   }, [open]);
-
-  if (isBrowser) {
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = () => {
-      //once scrolled set window position to current one and compare previous to current
-      let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        setShowNav(true);
-      } else {
-        setShowNav(false);
-        prevScrollpos = currentScrollPos;
-      }
-    };
-  }
 
   const scrollTop = () => {
     document.body.scrollTop = 20;
@@ -129,13 +78,13 @@ const NavBar = () => {
   };
 
   return (
-    <Nav id="nav" style={showNav ? show : hide} open={open}>
+    <Nav id="nav" style={{ top: visible ? "0" : "-160px" }} open={open}>
       <Logo onClick={scrollTop} src={logo} />
-      <button open={open} onClick={() => setOpen(!open)}>
+      <BurguerMenu open={open} onClick={() => setOpen(!open)}>
         <div></div>
         <div></div>
         <div></div>
-      </button>
+      </BurguerMenu>
       <Aside closeNav={closeNav} open={open} />
     </Nav>
   );
