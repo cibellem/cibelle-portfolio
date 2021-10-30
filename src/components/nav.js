@@ -43,6 +43,7 @@ const NavBar = () => {
   const handleScroll = debounce(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
+
     setVisible(
       (prevScrollPos > currentScrollPos &&
         prevScrollPos - currentScrollPos > 50) ||
@@ -54,11 +55,12 @@ const NavBar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
   useEffect(() => {
-      if (open && window.outerWidth >= "768") {
+    if (open && window.outerWidth <= "768") {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";

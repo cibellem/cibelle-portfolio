@@ -34,7 +34,9 @@ const Ul = styled.ul`
     height: 100vh;
     width: 257px;
     padding-top: 3.5rem;
-    transition: ease-out transform 1.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+    transition: transform 500ms ease-in-out;
+    transition-delay: 150ms;
+
     justify-content: center;
     align-items: center;
     padding-left: 0;
