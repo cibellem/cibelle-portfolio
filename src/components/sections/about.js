@@ -44,18 +44,17 @@ const About = () => {
       <img src={cibelle} alt="Cibelle's Headshot" />
       <p>
         Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack
-        Developer who decided to make her addiction for creating mIRC(Internet
-        Relay Chat client, **for th youngers) scripts into a profession. I am
-        curious by nature and love being exposed to different concepts, cultures
-        and people and I found in tech a place with endless oportunities to
-        pursue that.
+        Developer who decided to make her addiction for creating mIRC scripts
+        into a profession. I am curious by nature and love being exposed to
+        different concepts, cultures and people and I found in tech a place with
+        endless oportunities to pursue that.
       </p>
       <p>
         I have wroked on projects with tools such as React, Node and AWS. I love
         tinkering around and I'm very much interested to add more skills to my
-        list. I do expect to learn and be challenged in my next roles. I do
-        spend a lot of time coding but when doing it I I love to hike, garden
-        and play soccer. 😎
+        list. I do expect to learn and be challenged in my next roles. I spend a
+        lot of my time coding but when not doing it I I love to hike, garden and
+        play soccer. 😎
       </p>
     </AboutWrapper>
   );
