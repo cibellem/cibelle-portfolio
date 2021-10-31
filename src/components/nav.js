@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 //Custom
 import { mediaQueries } from "../styles/GlobalStyle";
-import { debounce } from "../utils/helpers";
+import { throttle } from "../utils/helpers";
 import logo from "../images/cmlogo.svg";
 import BurguerMenu from "./burguer";
 import Aside from "./aside";
@@ -15,7 +15,7 @@ export const Nav = styled.div`
   position: fixed;
   background-color: #152c3e;
   transition: top 0.5s ease-in-out;
-  animation-delay: 200ms;
+  animation-delay: 100ms;
 `;
 
 export const Logo = styled.img`
@@ -43,7 +43,7 @@ const NavBar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const handleScroll = debounce(() => {
+  const handleScroll = throttle(() => {
     // find current scroll position
     const currentScrollPos = window.pageYOffset;
 
@@ -55,7 +55,7 @@ const NavBar = () => {
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
     setOpen(false);
-  }, 100);
+  }, 500);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -66,9 +66,12 @@ const NavBar = () => {
     setOpen(false);
   };
 
+  const sendTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Nav style={{ top: visible ? "0" : "-160px" }} open={open}>
-      <Logo src={logo} />
+      <Logo onClick={sendTop} src={logo} />
       <BurguerMenu open={open} onClick={() => setOpen(!open)}>
         <div></div>
         <div></div>

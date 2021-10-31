@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
-import { skillsArr } from "../../utils/data";
 import { motion, useAnimation } from "framer-motion";
-import { mediaQueries } from "../../styles/GlobalStyle";
+import styled from "styled-components";
 import * as Shared from "../../styles/shared";
+import { skillsArr } from "../../utils/data";
+import { mediaQueries } from "../../styles/GlobalStyle";
 import { useInView } from "react-intersection-observer";
 
 const SkillWrapper = styled.article`
@@ -45,8 +45,7 @@ export const StackHeader = styled.h4`
   color: #15a374;
   margin: 0 0 10px 0;
   ${mediaQueries("md")`
-  font-size: 1.5rem;
- 
+  font-size: 1.5rem; 
   ;`}
 `;
 
@@ -54,14 +53,11 @@ export const StackHeader = styled.h4`
 const variants = {
   hidden: {
     x: -800,
-    transition: {
-      x: { stiffness: 800, velocity: 1000 },
-    },
   },
   visible: (i) => ({
     x: 0,
     transition: {
-      x: { staggerChildren: 0.07, delayChildren: 0.2 },
+      x: { type: "spring", stiffness: 50 },
       duration: 1,
       delay: i * 0.9,
     },

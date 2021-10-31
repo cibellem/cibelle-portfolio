@@ -104,7 +104,7 @@ const variants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      delay: i * 0.9,
+      delay: i * 0.4,
     },
   }),
 };

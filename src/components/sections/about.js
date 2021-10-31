@@ -14,7 +14,10 @@ const AboutWrapper = styled.article`
 
   img {
     padding: 20px;
-    max-width: 60%;
+    max-width: 200px;
+    ${mediaQueries("md")`    
+     max-width: 250px;
+  `}
   }
 
   p {

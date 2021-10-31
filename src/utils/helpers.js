@@ -1,3 +1,5 @@
+
+//function that delays invoking func 
 export function debounce(func, wait, immediate) {
   var timeout;
   return function () {
@@ -14,3 +16,18 @@ export function debounce(func, wait, immediate) {
   };
 }
 
+//wait a n time before call the function agains
+export function throttle(func, wait) {
+  let waiting = false;
+  return function () {
+    if (waiting) {
+      return;
+    }
+
+    waiting = true;
+    setTimeout(() => {
+      func.apply(this, arguments);
+      waiting = false;
+    }, wait);
+  };
+}

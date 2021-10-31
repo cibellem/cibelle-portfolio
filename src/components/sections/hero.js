@@ -72,7 +72,7 @@ const Hero = () => {
     >
       <HeroWrapper>
         <h4>Hi, my name is</h4>
-        <HeroHeader>Cibelle Montor..</HeroHeader>
+        <HeroHeader>Cibelle Montor...</HeroHeader>
         <HeroSubHeader>
           a happy little <span>camper</span> developer
         </HeroSubHeader>
