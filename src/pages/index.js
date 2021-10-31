@@ -7,13 +7,19 @@ import About from "../components/sections/about";
 import Contact from "../components/sections/contact";
 import Skills from "../components/sections/skills";
 import Social from "../components/social";
+import { Helmet } from "react-helmet";
 import { Container, GlobalStyles } from "../styles/GlobalStyle";
 
 const IndexPage = () => {
   return (
     <>
       <GlobalStyles />
-      <title>Cibelle Montor Portfolio</title>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cibelle Montor | Dev</title>
+        <link rel="canonical" href="https://cibellemontor.com" />
+      </Helmet>
+
       <NavBar />
       <Social />
       <Container>

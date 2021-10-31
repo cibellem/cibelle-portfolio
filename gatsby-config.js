@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-sass",
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
 
     {
       resolve: "gatsby-plugin-google-analytics",

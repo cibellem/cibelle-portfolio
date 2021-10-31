@@ -61,7 +61,7 @@ const variants = {
   visible: (i) => ({
     x: 0,
     transition: {
-      x: { type: "spring", stiffness: 60 },
+      x: { staggerChildren: 0.07, delayChildren: 0.2 },
       duration: 1,
       delay: i * 0.9,
     },
