@@ -41,17 +41,17 @@ const NavBar = () => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); 
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
-  useEffect(() => {
-    if (open && window.outerWidth <= "768") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-  }, [open]);
+  // useEffect(() => {
+  //   if (open && window.outerWidth <= "768") {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "visible";
+  //   }
+  // }, [open]);
 
   const handleScroll = debounce(() => {
     // find current scroll position
@@ -62,6 +62,7 @@ const NavBar = () => {
         prevScrollPos - currentScrollPos > 50) ||
         currentScrollPos < 10
     );
+    setOpen(false);
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   }, 100);
