@@ -14,6 +14,7 @@ const AboutWrapper = styled.article`
 
   img {
     padding: 20px;
+    max-width: 60%;
   }
 
   p {

@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { skillsArr } from "../../utils/data";
+import { motion, useAnimation } from "framer-motion";
 import { mediaQueries } from "../../styles/GlobalStyle";
 import * as Shared from "../../styles/shared";
+import { useInView } from "react-intersection-observer";
 
 const SkillWrapper = styled.article`
   display: flex;
@@ -48,19 +50,57 @@ export const StackHeader = styled.h4`
   ;`}
 `;
 
+//Animation with dynamic variants . Each block has a delay of .3.
+const variants = {
+  hidden: {
+    x: -800,
+    transition: {
+      x: { stiffness: 800, velocity: 1000 },
+    },
+  },
+  visible: (i) => ({
+    x: 0,
+    transition: {
+      x: { type: "spring", stiffness: 60 },
+      duration: 1,
+      delay: i * 0.9,
+    },
+  }),
+};
+
 const Skills = () => {
+  const controls = useAnimation();
+  //Watchs if element is in view
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <SkillWrapper id="skills">
       <Shared.SectionHeader>
-        <span className="marker">Tools</span>
+        <span ref={ref} className="marker">
+          Tools
+        </span>
       </Shared.SectionHeader>
-      {skillsArr.map((item) => (
-        <StackDiv key={item.stack}>
-          <StackHeader>{item.stack}</StackHeader>
-          {item.tools.map((tool) => (
-            <p>{tool}</p>
-          ))}
-        </StackDiv>
+
+      {skillsArr.map((item, i) => (
+        <motion.div
+          custom={i}
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+        >
+          <StackDiv key={item.stack}>
+            <StackHeader>{item.stack}</StackHeader>
+            {item.tools.map((tool) => (
+              <p>{tool}</p>
+            ))}
+          </StackDiv>
+        </motion.div>
       ))}
     </SkillWrapper>
   );

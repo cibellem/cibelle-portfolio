@@ -16,7 +16,6 @@ export const FormGroup = styled.div`
   width: 90%;
   background: #15a374;
   border: 6px;
-
   border-radius: 10px;
 
   ${mediaQueries("md")`
@@ -92,18 +91,21 @@ const Form = () => {
       id: "name",
       onChange: (e) => setName(e.target.value),
       placelholder: "Your name goes here",
+      isInput: true,
     },
     {
       value: email,
       id: "email",
       onChange: (e) => setEmail(e.target.value),
       placelholder: "Your email goes here",
+      isInput: true,
     },
     {
       value: message,
       id: "message",
       onChange: (e) => setMsg(e.target.value),
       placelholder: "Your msg goes here",
+      isInput: false,
     },
   ];
 
@@ -112,7 +114,16 @@ const Form = () => {
       {FormProps.map((item) => (
         <section key={item.id}>
           <label htmlFor={item.id}>{item.id}</label>
-          <input onChange={item.onChange} value={item.value} id={item.id} />
+          {item.isInput ? (
+            <input onChange={item.onChange} value={item.value} id={item.id} />
+          ) : (
+            <textarea
+              onChange={item.onChange}
+              rows="4"
+              value={item.value}
+              id={item.id}
+            />
+          )}
         </section>
       ))}
       <Message>{!error ? null : error}</Message>

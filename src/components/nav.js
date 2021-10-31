@@ -22,7 +22,8 @@ export const Logo = styled.img`
   position: absolute;
   cursor: pointer;
   left: 1rem;
-  top: 6px;
+  top: 12px;
+  width: 40px;
 
   &:hover {
     transform: scale(0.95);
@@ -30,7 +31,9 @@ export const Logo = styled.img`
   ${mediaQueries("md")`
    padding: 0 0 0 40px;
    opacity: 0.8;
-   transform: scale(0.9);
+   transform: scale(0.8);
+   width: auto; 
+   top: 6px;
 
   ;`}
 `;
@@ -49,15 +52,16 @@ const NavBar = () => {
         prevScrollPos - currentScrollPos > 50) ||
         currentScrollPos < 10
     );
-    setOpen(false);
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
+    setOpen(false);
   }, 100);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
+
   const closeNav = () => {
     setOpen(false);
   };

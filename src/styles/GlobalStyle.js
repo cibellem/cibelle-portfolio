@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import colors from "./theme";
 
-
 export const GlobalStyles = createGlobalStyle`
 
   ${colors};
@@ -22,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
-  input {
+  input , textarea{
   padding: 0.5em;
   border-radius: 2px;
   width: 100%;
@@ -92,15 +91,13 @@ export const mediaQueries = (key) => {
 
 export const Container = styled.article`
   padding: 0 1.5625rem 0 1.5625rem;
+  max-width: 1600px;
+  width: 100%;
   margin: auto;
+  min-height: 100vh;
 
-  ${mediaQueries("md")`
-    margin: 0px auto;
-    width: 100%;  
-    min-height: 100vh;   
-    padding: 80px 250px;
-    max-width: 1600px;
+  ${mediaQueries("xl")`      
+      padding: 80px 250px;
+
   `}
 `;
-
-

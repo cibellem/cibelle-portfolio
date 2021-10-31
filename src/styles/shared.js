@@ -33,7 +33,7 @@ export const Button = styled.button`
   margin: auto;
   border-radius: 47px;
   background: white;
-  box-shadow: -1px 6px 0px 0px;
+  box-shadow: -1px 6px 0px 0px black;
   &:hover {
     box-shadow: -1px 3px 0px 0px;
     transition: ease-in-out 0.3s;

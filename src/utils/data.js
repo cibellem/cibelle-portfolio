@@ -5,6 +5,7 @@ import ck from "../assets/ck.png";
 import plantare from "../assets/plantare.png";
 import { FaLinkedinIn, FaGithub, FaMailBulk } from "react-icons/fa";
 
+//Projects data
 export const projectsArr = [
   {
     title: "Plantare",
@@ -45,6 +46,7 @@ export const projectsArr = [
   },
 ];
 
+//Skills data
 export const skillsArr = [
   {
     stack: "Front End",
@@ -72,6 +74,7 @@ export const skillsArr = [
   },
 ];
 
+//Social data
 export const links = [
   {
     href: "https://www.linkedin.com/in/cibelle-montor-2a1a58157/",

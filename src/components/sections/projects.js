@@ -46,9 +46,10 @@ export const ProjectBlock = styled.div`
   box-shadow: -6px -5px 0px 0px #01030cd2;
 
   ${mediaQueries("md")`   
-   width: 80%;
+   width: 90%;
    min-width: 330px;
-   height: 100%;
+   height: 394px;
+   margin: auto;
   `};
 `;
 
@@ -96,12 +97,14 @@ export const GitIcon = styled.img`
 const variants = {
   hidden: {
     opacity: 0,
+    scale: 0,
   },
   visible: (i) => ({
     opacity: 1,
+    scale: 1,
     transition: {
-      duration: 0.7,
-      delay: i * 0.1,
+      duration: 0.8,
+      delay: i * 0.9,
     },
   }),
 };
@@ -115,20 +118,17 @@ const Projects = () => {
     if (inView) {
       controls.start("visible");
     }
-    if (!inView) {
-      controls.start("hidden");
-    }
   }, [controls, inView]);
 
   return (
     <ProjectSection id="projects">
       <ProjectSessionHeader>
-        {" "}
-        <span className="marker">Sample Projects </span>
+        <span ref={ref} className="marker">
+          Sample Projects{" "}
+        </span>
       </ProjectSessionHeader>
       {projectsArr.map((item, i) => (
         <motion.div
-          ref={ref}
           custom={i}
           initial="hidden"
           animate={controls}
