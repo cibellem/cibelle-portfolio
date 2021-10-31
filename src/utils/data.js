@@ -1,7 +1,9 @@
+import React from "React";
 import shelfie from "../assets/shelfie.svg";
 import wx from "../assets/wx.png";
 import ck from "../assets/ck.png";
 import plantare from "../assets/plantare.png";
+import { FaLinkedinIn, FaGithub, FaMailBulk } from "react-icons/fa";
 
 export const projectsArr = [
   {
@@ -67,5 +69,20 @@ export const skillsArr = [
       "Firebase",
       "MongoDB",
     ],
+  },
+];
+
+export const links = [
+  {
+    href: "https://www.linkedin.com/in/cibelle-montor-2a1a58157/",
+    icon: <FaLinkedinIn />,
+  },
+  {
+    href: "https://github.com/cibellem",
+    icon: <FaGithub />,
+  },
+  {
+    href: "mailto:montorcibelle@gmail.com",
+    icon: <FaMailBulk />,
   },
 ];

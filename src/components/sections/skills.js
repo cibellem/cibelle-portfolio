@@ -17,11 +17,10 @@ const SkillWrapper = styled.article`
   }
 
   ${mediaQueries("md")`
-  // margin: 20vh 0;
-  padding: 100px 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 100px 0;
   min-height: 380px;
   ;`}
 `;

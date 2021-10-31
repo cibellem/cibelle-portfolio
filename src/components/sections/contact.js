@@ -24,13 +24,12 @@ export const Text = styled.p`
   margin-bottom: 0;
   width: 100%;
 
-  ${mediaQueries("md")` 
-    font-size: 1.2rem;
-    line-height: 1.2;
-    width: 70%;
+  ${mediaQueries("md")`    
+    line-height: 1.2; 
     margin: auto;
     padding:20px;
-    text-align: center;
+    width: 70%;
+   
 
   ;`}
 `;

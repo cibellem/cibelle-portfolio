@@ -31,7 +31,7 @@ export const Logo = styled.img`
    padding: 0 0 0 40px;
    opacity: 0.8;
    transform: scale(0.9);
-   
+
   ;`}
 `;
 
@@ -39,6 +39,19 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll); 
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
+
+  useEffect(() => {
+    if (open && window.outerWidth <= "768") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [open]);
 
   const handleScroll = debounce(() => {
     // find current scroll position
@@ -53,31 +66,13 @@ const NavBar = () => {
     setPrevScrollPos(currentScrollPos);
   }, 100);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
-
-  useEffect(() => {
-    if (open && window.outerWidth <= "768") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-  }, [open]);
-
-  const scrollTop = () => {
-    document.body.scrollTop = 20;
-  };
-
   const closeNav = () => {
     setOpen(false);
   };
 
   return (
-    <Nav id="nav" style={{ top: visible ? "0" : "-160px" }} open={open}>
-      <Logo onClick={scrollTop} src={logo} />
+    <Nav style={{ top: visible ? "0" : "-160px" }} open={open}>
+      <Logo src={logo} />
       <BurguerMenu open={open} onClick={() => setOpen(!open)}>
         <div></div>
         <div></div>

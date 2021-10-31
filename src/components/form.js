@@ -3,18 +3,7 @@ import styled from "styled-components";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { mediaQueries } from "../styles/GlobalStyle";
-// import firestore from "@firebase/firestore";
-
-let firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: "contact-form-portfolio-61dfa.firebaseapp.com",
-  databaseURL: process.env.REACT_APP_DB_URL,
-  projectId: "contact-form-portfolio-61dfa",
-  storageBucket: "contact-form-portfolio-61dfa.appspot.com",
-  messagingSenderId: process.env.REACT_APP_MSG_SENDER_ID,
-  appId: process.env.REACT_APP_API_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-};
+import firebaseConfig from "../utils/config";
 
 firebase.initializeApp(firebaseConfig);
 const firestore = firebase.firestore();
@@ -23,10 +12,11 @@ const db = firestore.collection("contacts");
 
 export const FormGroup = styled.div`
   display: block;
+  padding: 50px 15px;
   width: 90%;
   background: #15a374;
   border: 6px;
-  padding: 50px 15px;
+
   border-radius: 10px;
 
   ${mediaQueries("md")`
@@ -36,19 +26,19 @@ export const FormGroup = styled.div`
 `;
 
 export const Message = styled.span`
+  display: block;
   margin-bottom: 0.3em;
   font-size: 0.9rem;
-  display: block;
   color: white;
 `;
 
 export const Button = styled.button`
   display: block;
-  cursor: pointer;
-  border: none;
   padding: 10px 20px;
   width: 80%;
   margin: auto;
+  cursor: pointer;
+  border: none;
   border-radius: 47px;
   background: white;
   box-shadow: -1px 6px 0px 0px;

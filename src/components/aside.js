@@ -4,10 +4,10 @@ import styled from "styled-components";
 import resume from "../Assets/resume.pdf";
 
 const Ul = styled.ul`
-  list-style: none;
   display: flex;
   flex-flow: row nowrap;
   float: right;
+  list-style: none;
   padding: 0 40px 0 0;
 
   a {
@@ -36,7 +36,6 @@ const Ul = styled.ul`
     padding-top: 3.5rem;
     transition: transform 500ms ease-in-out;
     transition-delay: 150ms;
-
     justify-content: center;
     align-items: center;
     padding-left: 0;
