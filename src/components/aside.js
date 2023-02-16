@@ -54,45 +54,62 @@ const Ul = styled.ul`
 const Aside = ({ open, closeNav }) => {
   return (
     <Ul open={open}>
-      <Link
-        onClick={closeNav}
-        to="projects"
-        spy={true}
-        smooth={true}
-        duration={900}
-      >
-        Projects
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="skills"
-        spy={true}
-        smooth={true}
-        duration={1000}
-      >
-        Skills
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="about"
-        spy={true}
-        smooth={true}
-        duration={1500}
-        offset={-80}
-      >
-        About Me
-      </Link>
-      <Link
-        onClick={closeNav}
-        to="contact"
-        spy={true}
-        smooth={true}
-        duration={1000}
-        offset={-100}
-      >
-        Contact
-      </Link>
-      <a href={resume}>Resume</a>
+      <li>
+        {" "}
+        <Link
+          onClick={closeNav}
+          to="projects"
+          spy={true}
+          smooth={true}
+          duration={900}
+        >
+          Projects
+        </Link>
+      </li>
+      <li>
+        {" "}
+        <Link
+          onClick={closeNav}
+          to="skills"
+          spy={true}
+          smooth={true}
+          duration={1000}
+        >
+          Skills
+        </Link>
+      </li>
+      <li>
+        {" "}
+        <Link
+          onClick={closeNav}
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={1500}
+          offset={-80}
+        >
+          About Me
+        </Link>
+      </li>
+
+      <li>
+        {" "}
+        <Link
+          onClick={closeNav}
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          offset={-100}
+        >
+          Contact
+        </Link>
+      </li>
+
+      <li>
+        {" "}
+        <a href={resume}>Resume</a>
+      </li>
     </Ul>
   );
 };

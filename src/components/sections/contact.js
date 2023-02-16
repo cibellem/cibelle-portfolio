@@ -40,8 +40,7 @@ const Contact = () => {
         <span className="marker">Reach out!</span>
       </Shared.SectionHeader>
       <Text>
-        Interested in colaborating or just want to tell me you hate/love my
-        website? Drop me a message!
+        Interested in colaborating ? Drop me a message!
       </Text>
       <Form />
     </ContactWrapper>

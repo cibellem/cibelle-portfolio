@@ -71,7 +71,7 @@ const NavBar = () => {
   };
   return (
     <Nav style={{ top: visible ? "0" : "-160px" }} open={open}>
-      <Logo onClick={sendTop} src={logo} />
+      <Logo onClick={sendTop} src={logo} alt="" />
       <BurguerMenu open={open} onClick={() => setOpen(!open)}>
         <div></div>
         <div></div>

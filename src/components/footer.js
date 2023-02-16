@@ -12,7 +12,7 @@ const StyledFooter = styled.div`
 
   span {
     font-size: 0.8rem;
-    color: var(--gray);
+    color: whitesmoke;
     margin: 0;
     padding: 0;
   }
@@ -32,7 +32,7 @@ const Footer = () => {
         Designed and developed by Cibelle Montor{" "}
         <span style={{ fontSize: "14px" }}>&#10024;</span>
       </span>
-      <span>© 2021 Copyright</span>
+      <span> ©{new Date().getFullYear()} Copyright</span>
     </StyledFooter>
   );
 };

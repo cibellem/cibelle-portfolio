@@ -77,9 +77,8 @@ const Hero = () => {
           a happy little <span>camper</span> developer
         </HeroSubHeader>
         <LargeText>
-          I’m a Software Engineer specialized in building Front and Backend
-          applications. I love building scalable, out of the box and
-          straightforward solutions.{" "}
+          I’m a Software Engineer specialized in building Web Applications. I love building scalable, out of the box and
+          straightforward solutions.
         </LargeText>
       </HeroWrapper>
     </motion.div>

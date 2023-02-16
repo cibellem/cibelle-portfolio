@@ -28,7 +28,7 @@ export const Message = styled.span`
   display: block;
   margin-bottom: 0.3em;
   font-size: 0.9rem;
-  color: white;
+  color: #f30000;
 `;
 
 export const Button = styled.button`

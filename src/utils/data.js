@@ -13,7 +13,7 @@ export const projectsArr = [
     github: "https://github.com/cibellem/plantare",
     app: "https://plantare.herokuapp.com/",
     description:
-      "Faux Plant Ecommerce that leverages Firebase to handle user authentication and Stripe for checkout.",
+      "Faux Plant Ecommerce with user authentication and a checkout flow.",
     type: "Full Stack MERN",
   },
   {
@@ -22,7 +22,7 @@ export const projectsArr = [
     github: "https://g;ithub.com/cibellem/react-bookSearch",
     app: "https://react-book-shelfie.herokuapp.com/",
     description:
-      "Book search built using Google Books API. This is a Crud application built with React, Expres and MongoDB. Users can retrieve books by title, author or key and favorite them. ",
+      "Book search built using Google Books API. Users can retrieve books by title, author or key.",
     type: "Front End",
   },
   {
@@ -31,7 +31,7 @@ export const projectsArr = [
     github: "https://github.com/cibellem/cleankitchen",
     app: "https://ckitchenpos.herokuapp.com/",
     description:
-      "CRUD application that intent to simplify a Kitchen point of sale system. This was a group project, developed during my Bootcamp. ",
+      "Clean Kitchen is a POS system that intent to simplify the work of these working in the kitchen. ",
     type: "Full Stack",
   },
 
@@ -41,7 +41,7 @@ export const projectsArr = [
     github: "https://github.com/cibellem/react-wdashboard",
     app: "https://shrouded-sea-44886.herokuapp.com/",
     description:
-      "Weather application that retrieve user's browser geolocation to display current weather. Consumes Open weather API ",
+      "Weather application that retrieve user's browser geolocation to display current weather. ",
     type: "Front End",
   },
 ];
@@ -53,7 +53,6 @@ export const skillsArr = [
     tools: [
       "JavaScript (ES6)",
       "React",
-      "Ionic",
       "Amplify",
       "HTML",
       "CSS/Scss",
@@ -79,13 +78,16 @@ export const links = [
   {
     href: "https://www.linkedin.com/in/cibelle-montor-2a1a58157/",
     icon: <FaLinkedinIn />,
+    ariaLabel: "Access Cibelle's LinkedIn",
   },
   {
     href: "https://github.com/cibellem",
     icon: <FaGithub />,
+    ariaLabel: "Access Cibelle's Github Account",
   },
   {
     href: "mailto:montorcibelle@gmail.com",
     icon: <FaMailBulk />,
+    ariaLabel: "Send an email to Cibelle",
   },
 ];

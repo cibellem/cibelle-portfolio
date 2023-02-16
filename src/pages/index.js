@@ -14,7 +14,11 @@ const IndexPage = () => {
   return (
     <>
       <GlobalStyles />
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: "en",
+        }}
+      >
         <meta charSet="utf-8" />
         <title>Cibelle Montor | Dev</title>
         <link rel="canonical" href="https://cibellemontor.com" />

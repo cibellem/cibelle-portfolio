@@ -83,6 +83,7 @@ export const ProjectSessionHeader = styled.h3`
 
 export const ProjectImg = styled.img`
   width: 80%;
+  width: calc(100% - 60px);
   opacity: 0.9;
   margin: auto;
 `;
@@ -137,14 +138,24 @@ const Projects = () => {
           <ProjectBlock key={item.title}>
             <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
             <ProjectName>{item.title}</ProjectName>
-            <ProjectImg src={item.img} />
+            <ProjectImg src={item.img} alt="" />
             <ProjectText>{item.description}</ProjectText>
 
             <section>
-              <a target="_blank" rel="noreferrer" href={item.github}>
-                <GitIcon src={github} />
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href={item.github}
+                aria-label="Visit the project Github repo"
+              >
+                <GitIcon src={github} alt="" />
               </a>
-              <a href={item.app} rel="noreferrer" target="_blank">
+              <a
+                href={item.app}
+                rel="noreferrer"
+                target="_blank"
+                aria-label="Learn more about the project"
+              >
                 Learn More
               </a>
             </section>

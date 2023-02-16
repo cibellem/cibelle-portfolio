@@ -49,7 +49,9 @@ const Social = () => {
       <ul>
         {links.map((item) => (
           <li>
-            <a href={item.href}>{item.icon}</a>
+            <a href={item.href} aria-label={item.ariaLabel}>
+              {item.icon}
+            </a>
           </li>
         ))}
       </ul>
