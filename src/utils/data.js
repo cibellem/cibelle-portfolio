@@ -91,3 +91,33 @@ export const links = [
     ariaLabel: "Send an email to Cibelle",
   },
 ];
+
+//Jobs data
+
+//Social data
+export const jobs = [
+  {
+    company: "Microsoft",
+    linkToCompany: "https://info.flip.com/",
+    date: "2022 - Present",
+    position: "Software Engineer",
+    description:
+      "Engineered and maintained Front End user features for Flip,  a free video discussion app used by millions of educators and students worldwide.  ",
+  },
+  {
+    company: "Cyber Dive",
+    linkToCompany: "https://www.cyberdive.co/",
+    date: "2020 - 2022",
+    position: "Software Engineer",
+    description:
+      "Worked across the full stack in a fast-paced startup and engineered the parent dashboard for Aqua One, a fully monitored smartphone for kids.",
+  },
+  {
+    company: "Little Taller",
+    linkToCompany: "https://littletaller.com/",
+    date: "2020 - 2020",
+    position: "Front End Developer",
+    description:
+      "Successfully delivered an admin portal where users could view/export student reports. Leveraged admin capabilities to allow admins to manage users and their permissions. ",
+  },
+];

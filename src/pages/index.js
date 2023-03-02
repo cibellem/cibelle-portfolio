@@ -7,6 +7,7 @@ import About from "../components/sections/about";
 import Contact from "../components/sections/contact";
 import Skills from "../components/sections/skills";
 import Social from "../components/social";
+import Jobs from "../components/sections/jobs";
 import { Helmet } from "react-helmet";
 import { Container, GlobalStyles } from "../styles/GlobalStyle";
 
@@ -28,7 +29,8 @@ const IndexPage = () => {
       <Social />
       <Container>
         <Hero />
-        <Projects />
+        <Jobs />
+        {/* <Projects /> */}
         <Skills />
         <About />
         <Contact />

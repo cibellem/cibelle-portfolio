@@ -47,11 +47,16 @@ const About = () => {
       </Shared.SectionHeader>
       <img src={cibelle} alt="Cibelle's Headshot" />
       <p>
-        Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack
+        Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack Web
         Developer who decided to make her addiction for creating mIRC scripts
-        into a profession. I am curious by nature and love being exposed to
-        different concepts, cultures and people and I found in tech a place with
-        endless oportunities to pursue that.
+        into a profession. I have had the opportunity to work at a{" "}
+        <a href="https://littletaller.com/">marketing agency,</a>a{" "}
+        <a href="https://www.cyberdive.co/">startup</a>, and mostly recent at a
+        <a href="https://www.microsoft.com/en-us/">big corporation</a>. It has
+        been a fun ride and I got to work on nice projects which I am proud of.
+        I am curious by nature and love being exposed to different concepts,
+        cultures and people and I found in tech a place with endless
+        oportunities to pursue that.
       </p>
       <p>
         I have wroked on projects with tools such as React, Node and AWS. I love

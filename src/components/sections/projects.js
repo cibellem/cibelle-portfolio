@@ -29,9 +29,20 @@ export const ProjectSection = styled.article`
     width:100%;  
     justify-items: center;
     align-items: center;
-    padding: 40px 80px
+ 
   `}
 `;
+
+export const ProjectGrid = styled.div`
+  list-style: none;
+  padding: 0px;
+  margin: 50px 0px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  position: relative;
+`;
+
 export const ProjectBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,10 +57,12 @@ export const ProjectBlock = styled.div`
   box-shadow: -6px -5px 0px 0px #01030cd2;
 
   ${mediaQueries("md")`   
-   width: 90%;
    min-width: 330px;
-   height: 394px;
+   height: 100%;
+   display: table;
+   width: 100%;
    margin: auto;
+ 
   `};
 `;
 
@@ -83,9 +96,7 @@ export const ProjectSessionHeader = styled.h3`
 
 export const ProjectImg = styled.img`
   width: 80%;
-  width: calc(100% - 60px);
-  opacity: 0.9;
-  margin: auto;
+  heigth: auto;
 `;
 
 export const GitIcon = styled.img`
@@ -129,38 +140,44 @@ const Projects = () => {
         </span>
       </ProjectSessionHeader>
       {projectsArr.map((item, i) => (
-        <motion.div
-          custom={i}
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-        >
-          <ProjectBlock key={item.title}>
-            <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
-            <ProjectName>{item.title}</ProjectName>
-            <ProjectImg src={item.img} alt="" />
-            <ProjectText>{item.description}</ProjectText>
+        <ProjectGrid>
+          <motion.div
+            custom={i}
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+          >
+            <ProjectBlock key={item.title}>
+              <ProjectMiniHeader>{item.type}</ProjectMiniHeader>
+              <ProjectName>{item.title}</ProjectName>
+              <div>
+                {" "}
+                <ProjectImg src={item.img} alt="" />
+              </div>
 
-            <section>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={item.github}
-                aria-label="Visit the project Github repo"
-              >
-                <GitIcon src={github} alt="" />
-              </a>
-              <a
-                href={item.app}
-                rel="noreferrer"
-                target="_blank"
-                aria-label="Learn more about the project"
-              >
-                Learn More
-              </a>
-            </section>
-          </ProjectBlock>
-        </motion.div>
+              <ProjectText>{item.description}</ProjectText>
+
+              <section>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={item.github}
+                  aria-label="Visit the project Github repo"
+                >
+                  <GitIcon src={github} alt="" />
+                </a>
+                <a
+                  href={item.app}
+                  rel="noreferrer"
+                  target="_blank"
+                  aria-label="Learn more about the project"
+                >
+                  Learn More
+                </a>
+              </section>
+            </ProjectBlock>
+          </motion.div>
+        </ProjectGrid>
       ))}
     </ProjectSection>
   );

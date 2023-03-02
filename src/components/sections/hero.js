@@ -53,13 +53,17 @@ const LargeText = styled.p`
 
 const HeroWrapper = styled.div`
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  height: 100vh;
   padding: 0px;
   ${mediaQueries("md")`
- 	 max-width: 1000px;
+ 
+ 	max-width: 1000px;
   ;`};
 `;
 
@@ -77,8 +81,8 @@ const Hero = () => {
           a happy little <span>camper</span> developer
         </HeroSubHeader>
         <LargeText>
-          I’m a Software Engineer specialized in building Web Applications. I love building scalable, out of the box and
-          straightforward solutions.
+          I’m a Software Engineer specialized in building Web Applications. I
+          love building scalable, out of the box and straightforward solutions.
         </LargeText>
       </HeroWrapper>
     </motion.div>

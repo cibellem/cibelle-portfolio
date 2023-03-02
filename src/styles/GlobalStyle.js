@@ -49,9 +49,13 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
-  h4 {
-    font-size: clamp(1rem, 8vw, 1.2rem);
-  }
+  // h3 {
+  //   font-size: clamp(1rem, 8vw, 1.2rem);
+  // }
+
+  // h4 {
+  //   font-size: clamp(1rem, 8vw, 1.2rem);
+  // }
 
   p {
   font-size: clamp(1rem, 5vw, 1.6rem);
@@ -76,6 +80,13 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0 0.25em;
   }
   }
+
+  .flex {
+    display: flex;
+  }
+
+  .justify-space-evenly {
+    justify-content: space-evenly;
   `;
 
 export const breakpoints = {
@@ -96,8 +107,21 @@ export const Container = styled.article`
   margin: auto;
   min-height: 100vh;
 
+  ${mediaQueries("sm")`      
+  padding: 0px 25px;
+
+  `}
+  ${mediaQueries("md")`      
+  padding: 0px 50px;
+
+  `}
+  ${mediaQueries("lg")`      
+  padding: 0px 100px;
+
+  `}
+
   ${mediaQueries("xl")`      
-      padding: 80px 250px;
+  padding: 80px 250px;
 
   `}
 `;
