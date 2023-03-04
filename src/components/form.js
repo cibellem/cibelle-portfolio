@@ -7,20 +7,20 @@ import firebaseConfig from "../utils/config";
 
 firebase.initializeApp(firebaseConfig);
 const firestore = firebase.firestore();
-//Connection to my colletions with Firebase
+//Connection to my contacst db
 const db = firestore.collection("contacts");
 
 export const FormGroup = styled.div`
   display: block;
   padding: 50px 15px;
   width: 90%;
-  background: #15a374;
+  background: #d4d4d4;
   border: 6px;
   border-radius: 10px;
 
   ${mediaQueries("md")`
-  width: 75%;
-  padding: 50px 60px;
+  width: 40%;
+  padding: 50px 50px;
   ;`};
 `;
 
@@ -34,12 +34,12 @@ export const Message = styled.span`
 export const Button = styled.button`
   display: block;
   padding: 10px 20px;
-  width: 80%;
+  width: 50%;
   margin: auto;
   cursor: pointer;
   border: none;
   border-radius: 47px;
-  background: white;
+  background: #15a374;
   box-shadow: -1px 6px 0px 0px;
   &:hover {
     box-shadow: -1px 3px 0px 0px;
@@ -69,18 +69,18 @@ const Form = () => {
         })
         .then(() => {
           setError("Msg sent!I will get back to you soon");
-          setTimeout(function () {
+          setTimeout(() => {
             setError(null);
             setName("");
             setEmail("");
             setMsg("");
             Array.from(document.querySelectorAll("input")).forEach(
-              (input) => (input.value = "")
+              (i) => (i.value = "")
             );
           }, 2000);
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch(() => {
+          setError("Opsi, can you retry?");
         });
     }
   };

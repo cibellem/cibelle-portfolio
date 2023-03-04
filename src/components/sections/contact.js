@@ -37,11 +37,11 @@ const Contact = () => {
   return (
     <ContactWrapper id="contact">
       <Shared.SectionHeader>
-        <span className="marker">Reach out!</span>
+        <span style={{ color: " #d4d4d4" }} className="marker">
+          Reach out!
+        </span>
       </Shared.SectionHeader>
-      <Text>
-        Interested in colaborating ? Drop me a message!
-      </Text>
+      <Text>Interested in colaborating ? Drop me a message!</Text>
       <Form />
     </ContactWrapper>
   );

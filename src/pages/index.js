@@ -26,7 +26,6 @@ const IndexPage = () => {
       </Helmet>
 
       <NavBar />
-      <Social />
       <Container>
         <Hero />
         <Jobs />

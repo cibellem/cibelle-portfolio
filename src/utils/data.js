@@ -53,7 +53,6 @@ export const skillsArr = [
     tools: [
       "JavaScript (ES6)",
       "React",
-      "Amplify",
       "HTML",
       "CSS/Scss",
       "Styled Components",
@@ -66,9 +65,8 @@ export const skillsArr = [
       "Express.js",
       "AWS Lambda",
       "AWS AppSync",
-      "NATS Streaming",
+      // "NATS Streaming",
       "Firebase",
-      "MongoDB",
     ],
   },
 ];

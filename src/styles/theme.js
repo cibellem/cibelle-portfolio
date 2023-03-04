@@ -11,6 +11,7 @@ const colors = css`
     --gray: #7f7f7f;
     --fadedgray: #495670;
     --pink: #b630e18f
+    --white : #d4d4d4
   }
 `;
 

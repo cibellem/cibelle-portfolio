@@ -11,15 +11,23 @@ const Ul = styled.ul`
   padding: 0 40px 0 0;
 
   a {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 50%,
+      #15a374 30%
+    );
+    background-position: -0% 0;
+    transition: background-position 0.5s ease-out;
     padding: 10px 16px;
     cursor: pointer;
-    color: #7f7f7f;
+    background-size: 200% auto;
+    text-decoration: none;
+    color: #d4d4d4;
 
     &:hover {
-      transform: translateY(-5px);
-      transition: ease-out 0.3s;
-      border-bottom: 5px solid #15a374;
+      transition: ease-out 0.5s;
+      background-position: -99.99% 0;
     }
   }
 

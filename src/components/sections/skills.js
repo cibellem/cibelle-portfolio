@@ -15,15 +15,20 @@ const SkillWrapper = styled.article`
   p {
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: 1.5;
+    font-size: 1.1rem;
   }
 
   ${mediaQueries("md")`
+  font-size: 1.4rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 100px 0;
   min-height: 380px;
+  margin: 20vh 0;         
+  padding: 0px 250px 
+
   ;`}
 `;
 
@@ -52,12 +57,12 @@ export const StackHeader = styled.h4`
 //Animation with dynamic variants . Each block has a delay of .3.
 const variants = {
   hidden: {
-    x: -800,
+    y: 0,
   },
   visible: (i) => ({
-    x: 0,
+    y: 0,
     transition: {
-      x: { type: "spring", stiffness: 50 },
+      y: { type: "spring", stiffness: 100 },
       duration: 1,
       delay: i * 0.9,
     },
@@ -78,7 +83,7 @@ const Skills = () => {
   return (
     <SkillWrapper id="skills">
       <Shared.SectionHeader>
-        <span ref={ref} className="marker">
+        <span style={{ color: " #d4d4d4" }} ref={ref} className="marker">
           Tools
         </span>
       </Shared.SectionHeader>

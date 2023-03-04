@@ -13,8 +13,7 @@ export const Nav = styled.div`
   height: 65px;
   z-index: 3;
   position: fixed;
-  background-color: #152c3e;
-  transition: top 0.5s ease-in-out;
+  transition: top 1s ease-in-out;
   animation-delay: 100ms;
 `;
 
@@ -25,9 +24,6 @@ export const Logo = styled.img`
   top: 12px;
   width: 40px;
 
-  &:hover {
-    transform: scale(0.95);
-  }
   ${mediaQueries("md")`
    padding: 0 0 0 40px;
    opacity: 0.8;
@@ -70,7 +66,7 @@ const NavBar = () => {
     window.scrollTo(0, 0);
   };
   return (
-    <Nav style={{ top: visible ? "0" : "-160px" }} open={open}>
+    <Nav style={{ top: visible ? "20px" : "-160px" }} open={open}>
       <Logo onClick={sendTop} src={logo} alt="" />
       <BurguerMenu open={open} onClick={() => setOpen(!open)}>
         <div></div>

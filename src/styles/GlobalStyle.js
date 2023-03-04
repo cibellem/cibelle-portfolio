@@ -13,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
+
+  background:#1A262D
   }
 
   body {   
@@ -43,7 +45,8 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration:none;
   }
   
-  h4, h5, h6 {
+  h2, h4, h5, h6 {
+    color: #d4d4d4
     margin: 0 0 10px 0;
     line-height: 1.2;   
 
@@ -58,9 +61,10 @@ export const GlobalStyles = createGlobalStyle`
   // }
 
   p {
-  font-size: clamp(1rem, 5vw, 1.6rem);
+  // font-size: clamp(1rem, 5vw, 1.4rem);
   margin: 10px 0 0 0;
   line-height: 1.4;
+  color: #d4d4d4
   
 
   }
@@ -116,12 +120,7 @@ export const Container = styled.article`
 
   `}
   ${mediaQueries("lg")`      
-  padding: 0px 100px;
-
-  `}
-
-  ${mediaQueries("xl")`      
-  padding: 80px 250px;
+  padding: 0px 80px;
 
   `}
 `;
