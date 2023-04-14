@@ -11,19 +11,6 @@ export const SectionHeader = styled.h2`
     `}
 `;
 
-export const Paragraph = styled.p`
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-bottom: 0;
-
-  ${mediaQueries("md")`
-    font-size: 1.2rem;    
-    line-height:1.2;
-    max-widht: 90%; 
-    
-  `}
-`;
-
 export const Button = styled.button`
   display: block;
   cursor: pointer;

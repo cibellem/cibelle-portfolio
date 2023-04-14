@@ -23,25 +23,6 @@ const JobsWrapper = styled.article`
   
 `;
 
-const JobGrid = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 1%;
-  align-items: baseline;
-  margin 40px 0 0 0;
-
-
-
-  ${mediaQueries("md")` 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  gap: 1%;
-  align-items: baseline;
-  margin 40px 0 0 0;
-  
-  `}
-`;
-
 export const JobBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -73,14 +54,21 @@ export const JobName = styled.h5`
 `;
 
 export const JobDescription = styled.p`
-  // font-size: 1.4rem;
   margin-top: 20px !important;
 
   ${mediaQueries("md")`
-  // font-size: 1.4rem
   max-width: 800px;
 
   ;`};
+`;
+
+const VerticalTimelineWrapper = styled.div`
+  margin: 0;
+
+  ${mediaQueries("md")`
+  margin: 200px 0;
+
+  ;`}
 `;
 
 const Jobs = () => {
@@ -97,7 +85,7 @@ const Jobs = () => {
           ride and I got to work with many technologies and incredible people.
         </p>
       </JobsWrapper>
-      <>
+      <VerticalTimelineWrapper>
         {jobs.map((job, i) => (
           <VerticalTimeline lineColor="var(--charcoal)">
             <VerticalTimelineElement
@@ -126,7 +114,7 @@ const Jobs = () => {
             </VerticalTimelineElement>
           </VerticalTimeline>
         ))}
-      </>
+      </VerticalTimelineWrapper>
     </>
   );
 };

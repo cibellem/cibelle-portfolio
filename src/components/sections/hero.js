@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 import { mediaQueries } from "../../styles/GlobalStyle";
 import Social from "../../components/social";
 
@@ -18,6 +19,7 @@ export const showAnimation = keyframes`
 
 export const HeroHeader = styled.h1`
   font-size: clamp(32px, 8vw, 60px);
+
   margin: 0;
   line-height: 1.2;
   animation: ${showAnimation} 0.5s cubic-bezier(0.7, 0, 0.1, 0.5) forwards;
@@ -26,22 +28,22 @@ export const HeroHeader = styled.h1`
 
 export const HeroSubHeader = styled.h2`
   font-size: clamp(32px, 8vw, 50px);
+
   margin: 0;
   line-height: 1.2;
-  animation: ${showAnimation} 6s cubic-bezier(0.7, 0, 0.1, 0.5) both;
+  animation: ${showAnimation} 1s cubic-bezier(0.7, 0, 0.1, 0.5) both;
   transform: translateY(100%);
   span {
-    text-decoration: line-through;
-    color: #15a374;
+    color: var(--purpleDetails);
   }
 `;
 
 const LargeText = styled.p`
   font-size: clamp(1rem, 5vw, 1.6rem);
+
   margin: 10px 0 0 0;
   line-height: 1.4;
-  animation: ${showAnimation} 0.4s cubic-bezier(0.7, 0, 0.1, 0.5) forwards;
-
+  animation: ${showAnimation} 1.2s cubic-bezier(0.7, 0, 0.1, 0.5) forwards;
   ${mediaQueries("md")`
     max-width:80%
   ;`}
@@ -49,36 +51,36 @@ const LargeText = styled.p`
 
 const HeroWrapper = styled.div`
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  height: 100vh;
-
+  padding: 0px;
   ${mediaQueries("md")`
-  margin: 10vh 0;         
-  padding: 0px 100px 
-
+ 	 max-width: 1000px;
   ;`};
 `;
 
 const Hero = () => {
   return (
-    <HeroWrapper>
-      <h4>Hi!</h4>
-      <HeroHeader>I'm Cibelle,</HeroHeader>
-      {/* <HeroSubHeader>
-          a happy little <span>camper</span> developer
-        </HeroSubHeader> */}
-      <LargeText>
-        Web Developer and JavaScript Engineer based in Phoenix/Arizona.
-        Simplicity , accessibility and reusability are the goals I keep in mind
-        whenever starting a new project.
-      </LargeText>
-      <Social />
-    </HeroWrapper>
+    <motion.div
+      opacity={0}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+    >
+      <HeroWrapper>
+        <h4>Hi!</h4>
+        <HeroHeader>I'm Cibelle...</HeroHeader>
+        <HeroSubHeader>
+          I'm a Developer based in <span>Arizona 🏜</span>
+        </HeroSubHeader>
+        <LargeText>
+          I specialized in building Web Applications. I focus on building
+          accessible, out of the box and straightforward solutions.
+        </LargeText>
+        <Social />
+      </HeroWrapper>
+    </motion.div>
   );
 };
 

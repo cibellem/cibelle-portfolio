@@ -3,18 +3,21 @@ import styled from "styled-components";
 //Custom
 import { mediaQueries } from "../styles/GlobalStyle";
 import logo from "../images/cmlogo.svg";
-import BurguerMenu from "./burguer";
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 1rem;
-  font-size: 1.3rem;
-  background: var(--deepPurple);
-  position: fixed; /* Set the navbar to fixed position */
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  background: var(--gray);
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+
+  ${mediaQueries("md")`    
+  font-size: 1.3rem;
+  position: fixed; /* Set the navbar to fixed position */
+`}
 
   ul {
     display: flex;
@@ -25,30 +28,40 @@ export const Nav = styled.nav`
 
   li {
     position: relative;
+    border-radius: 20px;
+
+    ${mediaQueries("md")`    
     margin-left: 1rem;
-    border: 2px solid var(--purpleDetails);
-    border-radius: 10px;
+    border: 2px solid var(--pink);
+  `}
   }
 
   a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     text-decoration: none;
-    color: var(--pink);
+    color: var(--purpleDetails);
+    ${mediaQueries("md")`    
+    padding: 0.5rem 1rem;
+  `};
   }
 `;
 
-export const Logo = styled.img`
+export const LogoWrapper = styled.div`
+  margin-right: 0;
   position: absolute;
+  left: 0;
+`;
+
+export const Logo = styled.img`
   cursor: pointer;
   left: 1rem;
   top: 12px;
-  width: 40px;
+  width: 80px;
 
   ${mediaQueries("md")`
    padding: 0 0 0 40px;
-   opacity: 0.8;
-   transform: scale(0.8);
+   transform: scale(1);
    width: auto; 
    top: 6px;
 
@@ -58,13 +71,19 @@ export const Logo = styled.img`
 const NavBar = () => {
   const [open, setOpen] = useState(false);
 
+  const closeNav = () => {
+    setOpen(false);
+  };
+
   const sendTop = () => {
     window.scrollTo(0, 0);
   };
   return (
     <>
-      <Logo onClick={sendTop} src={logo} alt="" />
       <Nav role="navigation" open={open}>
+        <LogoWrapper>
+          <Logo onClick={sendTop} src={logo} alt="" />
+        </LogoWrapper>
         <ul>
           <li>
             <a href="#projects">Projects</a>
@@ -79,12 +98,12 @@ const NavBar = () => {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <BurguerMenu open={open} onClick={() => setOpen(!open)}>
+        {/* <BurguerMenu open={open} onClick={() => setOpen(!open)}>
           <div></div>
           <div></div>
           <div></div>
         </BurguerMenu>
-        {/* <Aside open={open} /> */}
+        <Aside closeNav={closeNav} open={open} /> */}
       </Nav>
     </>
   );

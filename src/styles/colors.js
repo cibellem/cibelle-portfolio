@@ -6,9 +6,9 @@ const colors = css`
     --charcoal: #1f1f1f;
     --green: #15a374;
     --fadedGreen: ##b630e18f;
-    --navyBlue: #0d2538ed;
+    --navyBlue: #152c3e;
     --fadedBlue: #0d25381f;
-    --gray: #7f7f7f;
+    --gray: #fcf9f9;
     --fadedgray: #495670;
     --pink: #f1defa;
     --deepPurple: #2f195f;

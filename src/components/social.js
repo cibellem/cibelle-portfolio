@@ -16,12 +16,17 @@ const StyledSocial = styled.div`
     list-style: none;
     margin-right: 20px;
   }
+
+  a {
+    color: var(--purpleDetails)
+  }
+  
   svg {
     font-size: 1.6em;
-    color: #15a374;
+    color: var(--purpleDetails)
 
     &:hover {
-      color: rgba(13, 37, 56, 0.93);
+      color: var(--purpleDetails)
     }
   }
 `;

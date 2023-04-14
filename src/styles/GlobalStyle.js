@@ -2,6 +2,17 @@ import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import colors from "./colors";
 
+export const breakpoints = {
+  sm: 20,
+  md: 30,
+  lg: 45,
+  xl: 60,
+};
+
+export const mediaQueries = (key) => {
+  return (style) => `@media (min-width: ${breakpoints[key]}em) { ${style} }`;
+};
+
 export const GlobalStyles = createGlobalStyle`
 
   ${colors};
@@ -55,9 +66,13 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
   color: var(--charcoal); 
-  margin: 10px 0 0 0;
   line-height: 1.4;
+  font-size: 1.1rem;
+  ${mediaQueries("md")`      
+  max-width: 980px;
+  font-size: 1.4rem;
 
+  `}
   }
 
   // & .marker {
@@ -82,17 +97,6 @@ export const GlobalStyles = createGlobalStyle`
   .justify-space-evenly {
     justify-content: space-evenly;
   `;
-
-export const breakpoints = {
-  sm: 20,
-  md: 30,
-  lg: 45,
-  xl: 60,
-};
-
-export const mediaQueries = (key) => {
-  return (style) => `@media (min-width: ${breakpoints[key]}em) { ${style} }`;
-};
 
 export const Container = styled.article`
   padding: 0 1.5625rem 0 1.5625rem;

@@ -16,7 +16,12 @@ const AboutWrapper = styled.article`
     padding: 20px;
     max-width: 200px;
     ${mediaQueries("md")`    
-     max-width: 250px;
+     max-width: 350px;
+    //  border: 2px solid var(--purpleDetails);
+    box-shadow: 1px 7px 2px  #7353ba66;
+     padding: 34px;
+     border-radius: 50%;
+     background: var(--pink);
   `}
   }
 
@@ -48,16 +53,15 @@ const About = () => {
       <p>
         Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack Web
         Developer who decided to make her addiction for creating mIRC scripts
-        into a profession. It has been a fun ride and I got to work on nice
-        projects which and incredible people. I am curious by nature and love
-        being exposed to different "stuff" and I found in tech a place with
-        endless oportunities to pursue that.
+        into a profession. I am curious by nature and love being exposed to
+        different "stuff" and I found in tech a place with endless oportunities
+        to pursue that.
       </p>
       <p>
         I love tinkering around and I'm very much interested to add more skills
         to my list. I do expect to learn and be challenged in every project. I'm
-        super active and when I'm not in front of my compiter I enjoy hiking and
-        playing soccer.
+        super active and when I'm not in front of my computer I enjoy hiking and
+        playing soccer. 😎
       </p>
     </AboutWrapper>
   );
