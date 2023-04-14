@@ -1,7 +1,5 @@
 import * as React from "react";
-import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
-import theme from "../../styles/theme";
 import { mediaQueries } from "../../styles/GlobalStyle";
 import Social from "../../components/social";
 
@@ -20,8 +18,6 @@ export const showAnimation = keyframes`
 
 export const HeroHeader = styled.h1`
   font-size: clamp(32px, 8vw, 60px);
-  color: ${theme.white};
-  color: #d4d4d4;
   margin: 0;
   line-height: 1.2;
   animation: ${showAnimation} 0.5s cubic-bezier(0.7, 0, 0.1, 0.5) forwards;
@@ -30,8 +26,6 @@ export const HeroHeader = styled.h1`
 
 export const HeroSubHeader = styled.h2`
   font-size: clamp(32px, 8vw, 50px);
-  color: ${theme.white};
-  color: #d4d4d4;
   margin: 0;
   line-height: 1.2;
   animation: ${showAnimation} 6s cubic-bezier(0.7, 0, 0.1, 0.5) both;
@@ -44,8 +38,6 @@ export const HeroSubHeader = styled.h2`
 
 const LargeText = styled.p`
   font-size: clamp(1rem, 5vw, 1.6rem);
-  color: ${theme.white}; // not working why?
-  color: #d4d4d4;
   margin: 10px 0 0 0;
   line-height: 1.4;
   animation: ${showAnimation} 0.4s cubic-bezier(0.7, 0, 0.1, 0.5) forwards;
@@ -75,8 +67,8 @@ const HeroWrapper = styled.div`
 const Hero = () => {
   return (
     <HeroWrapper>
-      {/* <h4>Hi!</h4> */}
-      <HeroHeader>I'm Cibelle Montor,</HeroHeader>
+      <h4>Hi!</h4>
+      <HeroHeader>I'm Cibelle,</HeroHeader>
       {/* <HeroSubHeader>
           a happy little <span>camper</span> developer
         </HeroSubHeader> */}

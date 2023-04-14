@@ -43,12 +43,7 @@ const AboutWrapper = styled.article`
 const About = () => {
   return (
     <AboutWrapper id="about">
-      <Shared.SectionHeader>
-        <span style={{ color: " #d4d4d4" }} className="marker">
-          {" "}
-          About Me...
-        </span>
-      </Shared.SectionHeader>
+      <Shared.SectionHeader>About Me</Shared.SectionHeader>
       <img src={cibelle} alt="Cibelle's Headshot" />
       <p>
         Hey, and really nice to meet you. I'm Cibelle and I'm a Full Stack Web

@@ -36,11 +36,7 @@ export const Text = styled.p`
 const Contact = () => {
   return (
     <ContactWrapper id="contact">
-      <Shared.SectionHeader>
-        <span style={{ color: " #d4d4d4" }} className="marker">
-          Reach out!
-        </span>
-      </Shared.SectionHeader>
+      <Shared.SectionHeader>Reach out!</Shared.SectionHeader>
       <Text>Interested in colaborating ? Drop me a message!</Text>
       <Form />
     </ContactWrapper>

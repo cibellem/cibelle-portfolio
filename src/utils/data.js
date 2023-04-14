@@ -1,9 +1,11 @@
-import React from "React";
+import React from "react";
 import shelfie from "../assets/shelfie.svg";
 import wx from "../assets/wx.png";
 import ck from "../assets/ck.png";
 import plantare from "../assets/plantare.png";
-import { FaLinkedinIn, FaGithub, FaMailBulk } from "react-icons/fa";
+import resume from "../assets/resume.pdf";
+
+import { FaLinkedin, FaGithub, FaMailBulk, FaPaperclip } from "react-icons/fa";
 
 //Projects data
 export const projectsArr = [
@@ -56,6 +58,7 @@ export const skillsArr = [
       "HTML",
       "CSS/Scss",
       "Styled Components",
+      "Figma",
     ],
   },
   {
@@ -75,7 +78,7 @@ export const skillsArr = [
 export const links = [
   {
     href: "https://www.linkedin.com/in/cibelle-montor-2a1a58157/",
-    icon: <FaLinkedinIn />,
+    icon: <FaLinkedin />,
     ariaLabel: "Access Cibelle's LinkedIn",
   },
   {
@@ -88,6 +91,11 @@ export const links = [
     icon: <FaMailBulk />,
     ariaLabel: "Send an email to Cibelle",
   },
+  {
+    href: resume,
+    icon: <FaPaperclip />,
+    ariaLabel: "Resume",
+  },
 ];
 
 //Jobs data
@@ -97,16 +105,19 @@ export const jobs = [
   {
     company: "Microsoft",
     linkToCompany: "https://info.flip.com/",
-    date: "2022 - Present",
+    date: "2022 - 2023",
     position: "Software Engineer",
+    pos: "left",
     description:
       "Engineered and maintained Front End user features for Flip,  a free video discussion app used by millions of educators and students worldwide.  ",
   },
+
   {
     company: "Cyber Dive",
     linkToCompany: "https://www.cyberdive.co/",
     date: "2020 - 2022",
     position: "Software Engineer",
+    pos: "right",
     description:
       "Worked across the full stack in a fast-paced startup and engineered the parent dashboard for Aqua One, a fully monitored smartphone for kids.",
   },
@@ -115,6 +126,7 @@ export const jobs = [
     linkToCompany: "https://littletaller.com/",
     date: "2020 - 2020",
     position: "Front End Developer",
+    pos: "left",
     description:
       "Successfully delivered an admin portal where users could view/export student reports. Leveraged admin capabilities to allow admins to manage users and their permissions. ",
   },

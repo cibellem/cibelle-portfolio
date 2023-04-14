@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { jobs } from "../../utils/data";
 import { mediaQueries } from "../../styles/GlobalStyle";
 import * as Shared from "../../styles/shared";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { FaRocket } from "react-icons/fa";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 const JobsWrapper = styled.article`
   display: flex;
@@ -14,7 +18,6 @@ const JobsWrapper = styled.article`
   margin: 10vh 0;
   gap: 20px;
   
-
   }
 
   
@@ -80,69 +83,51 @@ export const JobDescription = styled.p`
   ;`};
 `;
 
-//Animation with dynamic variants . Each block has a delay of .3.
-const variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0,
-  },
-  visible: (i) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      delay: i * 0.4,
-    },
-  }),
-};
-
 const Jobs = () => {
-  const controls = useAnimation();
-  //Watchs if element is in view
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
   return (
-    <JobsWrapper id="jobs">
-      <Shared.SectionHeader>
-        <span style={{ color: " #d4d4d4" }} ref={ref} className="marker">
-          Experience
-        </span>
-      </Shared.SectionHeader>
-      <JobGrid>
-        {/* <h2>
+    <>
+      <JobsWrapper id="jobs">
+        <Shared.SectionHeader>Experience</Shared.SectionHeader>
+        <p>
           I have had the opportunity to work at a marketing agency,a startup,
           and mostly recent at a big corporation. I built dashboards, wrote test
           cases, engineered user portals, scaled up microservices, and obviously
           broke and fix several things. I'm passionate about what I do and being
           better ever day is my ultimate professional goal. It has been a fun
-          ride and I got to work with many technologies and incredible people. I
-          consider myself a JavaScript developer, but I have also worked with
-          Python.
-        </h2> */}
+          ride and I got to work with many technologies and incredible people.
+        </p>
+      </JobsWrapper>
+      <>
         {jobs.map((job, i) => (
-          <motion.div
-            custom={i}
-            initial="hidden"
-            animate={controls}
-            variants={variants}
-          >
-            <JobBox>
-              <JobName>
-                {job.company} | {job.position}
-              </JobName>
-              <span>{job.date}</span>
-              <JobDescription>{job.description}</JobDescription>
-            </JobBox>
-          </motion.div>
+          <VerticalTimeline lineColor="var(--charcoal)">
+            <VerticalTimelineElement
+              position={job.pos}
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "#f1defa",
+              }}
+              contentArrowStyle={{
+                borderRight: "8px solid var(--purpleDetails)",
+              }}
+              date={job.date}
+              icon={<FaRocket />}
+              iconStyle={{
+                background: "var(--deepPurple)",
+                color: "var(--pink)",
+              }}
+            >
+              <h3 className="vertical-timeline-element-title">
+                {job.position}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">
+                {job.company}
+              </h4>
+              <p>{job.description}</p>
+            </VerticalTimelineElement>
+          </VerticalTimeline>
         ))}
-      </JobGrid>
-    </JobsWrapper>
+      </>
+    </>
   );
 };
 

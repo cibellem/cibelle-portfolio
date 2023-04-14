@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { links } from "../utils/data";
-import { mediaQueries } from "../styles/GlobalStyle";
 
 const StyledSocial = styled.div`
   display: flex;

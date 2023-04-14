@@ -1,20 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-import colors from "./theme";
+import colors from "./colors";
 
 export const GlobalStyles = createGlobalStyle`
 
   ${colors};
+
   *, *::after, *::before {
   box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   html, body {
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
+  background:#fefefe
 
-  background:#1A262D
   }
 
   body {   
@@ -41,49 +46,34 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
-  li, a {
-    text-decoration:none;
-  }
   
   h2, h4, h5, h6 {
-    color: #d4d4d4
     margin: 0 0 10px 0;
     line-height: 1.2;   
 
   }
 
-  // h3 {
-  //   font-size: clamp(1rem, 8vw, 1.2rem);
-  // }
-
-  // h4 {
-  //   font-size: clamp(1rem, 8vw, 1.2rem);
-  // }
-
   p {
-  // font-size: clamp(1rem, 5vw, 1.4rem);
+  color: var(--charcoal); 
   margin: 10px 0 0 0;
   line-height: 1.4;
-  color: #d4d4d4
-  
 
   }
 
-  & .marker {
-    position: relative;
-    
-    &:before {
-    content: "";
-    background-color: rgb(13 37 56 / 12%);
-    width: 100%;
-    height: 1em;
-    position: absolute;
-    z-index: -1;
-    left: -0.25em;
-    top: 0.1em;
-    padding: 0 0.25em;
-  }
-  }
+  // & .marker {
+  //   position: relative;
+  //   &:before {
+  //   content: "";
+  //   background-color: var(--purpleDetails);
+  //   width: 100%;
+  //   height: 1em;
+  //   position: absolute;
+  //   z-index: -1;
+  //   left: -0.25em;
+  //   top: 0.1em;
+  //   padding: 0 0.25em;
+  // }
+  // }
 
   .flex {
     display: flex;

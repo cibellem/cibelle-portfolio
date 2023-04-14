@@ -23,7 +23,6 @@ const Ul = styled.ul`
     cursor: pointer;
     background-size: 200% auto;
     text-decoration: none;
-    color: #d4d4d4;
 
     &:hover {
       transition: ease-out 0.5s;

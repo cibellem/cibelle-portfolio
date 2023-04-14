@@ -23,10 +23,9 @@ const SkillWrapper = styled.article`
   font-size: 1.4rem;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding: 100px 0;
-  min-height: 380px;
-  margin: 20vh 0;         
+  min-height: 380px;      
   padding: 0px 250px 
 
   ;`}
@@ -45,9 +44,9 @@ export const StackDiv = styled.div`
   padding: 20px;
 `;
 
-export const StackHeader = styled.h4`
+export const StackHeader = styled.h3`
   font-size: 1.2rem;
-  color: #15a374;
+  color: var(--purpleDetails);
   margin: 0 0 10px 0;
   ${mediaQueries("md")`
   font-size: 1.5rem; 
@@ -81,29 +80,19 @@ const Skills = () => {
   }, [controls, inView]);
 
   return (
-    <SkillWrapper id="skills">
-      <Shared.SectionHeader>
-        <span style={{ color: " #d4d4d4" }} ref={ref} className="marker">
-          Tools
-        </span>
-      </Shared.SectionHeader>
-
-      {skillsArr.map((item, i) => (
-        <motion.div
-          custom={i}
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-        >
+    <>
+      <Shared.SectionHeader>Tools</Shared.SectionHeader>
+      <SkillWrapper id="skills">
+        {skillsArr.map((item, i) => (
           <StackDiv key={item.stack}>
             <StackHeader>{item.stack}</StackHeader>
             {item.tools.map((tool) => (
               <p>{tool}</p>
             ))}
           </StackDiv>
-        </motion.div>
-      ))}
-    </SkillWrapper>
+        ))}
+      </SkillWrapper>
+    </>
   );
 };
 
